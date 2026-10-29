@@ -183,3 +183,34 @@ document.addEventListener("DOMContentLoaded", () => {
   }
   animate();
 });
+
+// Contact form — sends via Formspree without leaving the page
+document.querySelectorAll(".contact-form").forEach(form => {
+  const status = form.querySelector(".form-status");
+  const button = form.querySelector("button[type=submit]");
+  const label = button.textContent;
+  form.addEventListener("submit", async (e) => {
+    e.preventDefault();
+    button.disabled = true;
+    button.textContent = form.dataset.sending;
+    status.className = "form-status";
+    status.textContent = "";
+    try {
+      const res = await fetch(form.action, {
+        method: "POST",
+        body: new FormData(form),
+        headers: { Accept: "application/json" }
+      });
+      if (!res.ok) throw new Error(res.status);
+      form.reset();
+      status.textContent = form.dataset.ok;
+      status.classList.add("ok");
+    } catch (err) {
+      status.textContent = form.dataset.err;
+      status.classList.add("err");
+    } finally {
+      button.disabled = false;
+      button.textContent = label;
+    }
+  });
+});

@@ -1955,3 +1955,34 @@ font-size:xx-large;
 @media (max-width: 750px){
   .about-page .hero-photo{ height:420px; }
 }
+
+/* ==========================================================================
+   Contact form (footer)
+   ========================================================================== */
+.contact-form{
+  max-width:850px; margin:3.5rem auto 0;
+  padding:clamp(22px,4vw,36px); border-radius:24px;
+  background:rgba(255,255,255,.06); border:1px solid rgba(255,255,255,.14);
+  display:grid; gap:18px;
+}
+.contact-form h3{ color:var(--white); font-size:1.4rem; margin:0; }
+.contact-form .form-row{ display:grid; grid-template-columns:1fr 1fr; gap:18px; }
+.contact-form label{ display:grid; gap:8px; font-size:.85rem; font-weight:600; color:#E8DCD5; }
+.contact-form input, .contact-form textarea{
+  width:100%; font:inherit; font-weight:400; font-size:1rem; color:var(--white);
+  background:rgba(255,255,255,.08); border:1px solid rgba(255,255,255,.22);
+  border-radius:14px; padding:13px 16px; transition:border-color .2s, background .2s;
+}
+.contact-form textarea{ resize:vertical; min-height:130px; }
+.contact-form input::placeholder, .contact-form textarea::placeholder{ color:rgba(255,255,255,.45); }
+.contact-form input:focus, .contact-form textarea:focus{
+  outline:none; border-color:var(--terracotta-bright); background:rgba(255,255,255,.12);
+}
+.contact-form button{ justify-self:start; cursor:pointer; background:transparent; border-color:var(--white); color:var(--white); }
+.contact-form button:hover{ background:var(--white); color:var(--ink); }
+.contact-form button:disabled{ opacity:.6; cursor:wait; }
+.contact-form .form-trap{ position:absolute; left:-9999px; width:1px; height:1px; opacity:0; }
+.contact-form .form-status{ margin:0; font-size:.95rem; color:#E8DCD5; min-height:1.4em; }
+.contact-form .form-status.ok{ color:#9fd6a8; }
+.contact-form .form-status.err{ color:#f2a48a; }
+@media (max-width:640px){ .contact-form .form-row{ grid-template-columns:1fr; } }

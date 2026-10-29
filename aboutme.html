@@ -352,6 +352,26 @@
         </div>
       </div>
 
+      <form class="contact-form" action="https://formspree.io/f/FORMSPREE_ID" method="POST"
+        data-ok="Bedankt! Je bericht is verstuurd. Ik neem zo snel mogelijk contact met je op." data-err="Er ging iets mis bij het versturen. Probeer het opnieuw of mail me direct." data-sending="Versturen…">
+        <h3>Of stuur direct een bericht</h3>
+        <div class="form-row">
+          <label>Naam
+            <input type="text" name="name" autocomplete="name" required>
+          </label>
+          <label>E-mailadres
+            <input type="email" name="email" autocomplete="email" required>
+          </label>
+        </div>
+        <label>Bericht
+          <textarea name="message" rows="5" placeholder="Waar wil je het over hebben?" required></textarea>
+        </label>
+        <input type="hidden" name="_subject" value="Nieuw bericht via je portfolio">
+        <input type="text" name="_gotcha" class="form-trap" tabindex="-1" autocomplete="off" aria-hidden="true">
+        <button type="submit" class="btn btn-light">Verstuur bericht →</button>
+        <p class="form-status" role="status" aria-live="polite"></p>
+      </form>
+
       <div class="footer-links">
         <a href="mailto:suzanalkanbar@gmail.com">suzanalkanbar@gmail.com</a>
         <a href="https://www.linkedin.com/in/suzan-alkanbar/" target="_blank" rel="noopener">LinkedIn ↗</a>
