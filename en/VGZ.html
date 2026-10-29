@@ -5,7 +5,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>VGZ — Soepel &amp; Sterk Coach | Suzan Alkanbar</title>
-  <link rel="stylesheet" href="../CSS/style.css?v=5" />
+  <link rel="stylesheet" href="../CSS/style.css?v=6" />
   <link rel="alternate" hreflang="nl" href="https://suzanalkanbar.github.io/VGZ.html">
   <link rel="alternate" hreflang="en" href="https://suzanalkanbar.github.io/en/VGZ.html">
   <link rel="icon" href="../favicon.svg?v=1" type="image/svg+xml">
@@ -409,56 +409,52 @@
   <footer class="site-footer" id="contact">
     <div class="wrap">
 
-      <div class="contact-layout">
+      <div class="contact-compact">
         <div class="contact-content">
-          <span class="eyebrow">Contact</span>
+          <div class="contact-head">
+            <div class="contact-photo">
+              <img src="../IMG/contact-suzan.jpg" alt="Suzan with a vintage telephone" loading="lazy">
+            </div>
+            <span class="eyebrow">Contact</span>
+          </div>
           <h2>Let's get to know each other.</h2>
-          <p>Have a question, a vacancy or something you'd like to discuss? Feel free to send me an email or a message on LinkedIn.</p>
-          <a class="btn" href="mailto:suzanalkanbar@gmail.com">Send an email ↗</a>
-        </div>
-        <div class="contact-photo">
-          <img src="../IMG/contact-suzan.jpg" alt="Suzan with a vintage telephone" loading="lazy">
-        </div>
-      </div>
-
-      <form class="contact-form" action="https://api.web3forms.com/submit" method="POST"
-        data-ok="Thank you! Your message has been sent. I'll reply as soon as possible." data-err="Something went wrong while sending. Please try again or email me directly." data-sending="Sending…"
-        data-email-empty="Please enter your email address so I can reply to you." data-email-bad="This email address doesn't look right. Please check it." data-msg-empty="Please write a message of at least 10 characters.">
-        <div class="form-head">
-          <span class="eyebrow">Send a message</span>
-          <h3>Write to me directly</h3>
-          <p>Leave your email address so I can reply to you.</p>
-        </div>
-        <div class="form-row">
-          <div class="field">
-            <label for="cf-name-en">Name <span class="opt">(optional)</span></label>
-            <input id="cf-name-en" type="text" name="name" autocomplete="name">
-          </div>
-          <div class="field">
-            <label for="cf-email-en">Email address <span class="req" aria-label="required">*</span></label>
-            <input id="cf-email-en" type="email" name="email" autocomplete="email" placeholder="name@example.com" required aria-describedby="cf-email-en-err">
-            <p class="field-error" id="cf-email-en-err"></p>
+          <p>Have a question, a vacancy or something you'd like to discuss? Send me a message with the form, an email or a message on LinkedIn.</p>
+          <div class="footer-links">
+            <a href="mailto:suzanalkanbar@gmail.com">suzanalkanbar@gmail.com</a>
+            <a href="https://www.linkedin.com/in/suzan-alkanbar/" target="_blank" rel="noopener">LinkedIn ↗</a>
+            <a href="../pdf/SuzanAlkanbar_CV.pdf" target="_blank">Download CV</a>
           </div>
         </div>
-        <div class="field">
-          <label for="cf-msg-en">Message <span class="req" aria-label="required">*</span></label>
-          <textarea id="cf-msg-en" name="message" rows="5" minlength="10" placeholder="What would you like to talk about?" required aria-describedby="cf-msg-en-err"></textarea>
-          <p class="field-error" id="cf-msg-en-err"></p>
-        </div>
-        <input type="hidden" name="access_key" value="c11bfd0e-7e9c-449b-991f-32e89269a931">
-        <input type="hidden" name="from_name" value="Portfolio Suzan Alkanbar">
-        <input type="hidden" name="subject" value="New message via your portfolio">
-        <input type="checkbox" name="botcheck" class="form-trap" tabindex="-1" autocomplete="off" aria-hidden="true">
-        <div class="form-actions">
-          <button type="submit" class="btn btn-solid">Send message →</button>
-          <p class="form-status" role="status" aria-live="polite"></p>
-        </div>
-      </form>
 
-      <div class="footer-links">
-        <a href="mailto:suzanalkanbar@gmail.com">suzanalkanbar@gmail.com</a>
-        <a href="https://www.linkedin.com/in/suzan-alkanbar/" target="_blank" rel="noopener">LinkedIn ↗</a>
-        <a href="../pdf/SuzanAlkanbar_CV.pdf" target="_blank">Download CV</a>
+        <form class="contact-form" action="https://api.web3forms.com/submit" method="POST"
+          data-ok="Thank you! Your message has been sent. I'll reply as soon as possible." data-err="Something went wrong while sending. Please try again or email me directly." data-sending="Sending…"
+          data-email-empty="Please enter your email address so I can reply to you." data-email-bad="This email address doesn't look right. Please check it." data-msg-empty="Please write a message of at least 10 characters.">
+          <h3>Send a message</h3>
+          <div class="form-row">
+            <div class="field">
+              <label for="cf-name-en">Name <span class="opt">(optional)</span></label>
+              <input id="cf-name-en" type="text" name="name" autocomplete="name">
+            </div>
+            <div class="field">
+              <label for="cf-email-en">Email address <span class="req" aria-label="required">*</span></label>
+              <input id="cf-email-en" type="email" name="email" autocomplete="email" placeholder="name@example.com" required aria-describedby="cf-email-en-err">
+              <p class="field-error" id="cf-email-en-err"></p>
+            </div>
+          </div>
+          <div class="field">
+            <label for="cf-msg-en">Message <span class="req" aria-label="required">*</span></label>
+            <textarea id="cf-msg-en" name="message" rows="4" minlength="10" placeholder="What would you like to talk about?" required aria-describedby="cf-msg-en-err"></textarea>
+            <p class="field-error" id="cf-msg-en-err"></p>
+          </div>
+          <input type="hidden" name="access_key" value="c11bfd0e-7e9c-449b-991f-32e89269a931">
+          <input type="hidden" name="from_name" value="Portfolio Suzan Alkanbar">
+          <input type="hidden" name="subject" value="New message via your portfolio">
+          <input type="checkbox" name="botcheck" class="form-trap" tabindex="-1" autocomplete="off" aria-hidden="true">
+          <div class="form-actions">
+            <button type="submit" class="btn btn-solid">Send →</button>
+            <p class="form-status" role="status" aria-live="polite"></p>
+          </div>
+        </form>
       </div>
 
       <div class="footer-bottom">

@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Suzan Alkanbar — UX/UI Designer</title>
   <meta name="description" content="Suzan Alkanbar — UX/UI designer & creative developer. Case studies in onderzoek, interactieontwerp en prototyping.">
-  <link rel="stylesheet" href="./CSS/style.css?v=5">
+  <link rel="stylesheet" href="./CSS/style.css?v=6">
   <link rel="alternate" hreflang="nl" href="https://suzanalkanbar.github.io/index.html">
   <link rel="alternate" hreflang="en" href="https://suzanalkanbar.github.io/en/index.html">
   <link rel="icon" href="./favicon.svg?v=1" type="image/svg+xml">
@@ -158,56 +158,52 @@
   <footer class="site-footer" id="contact">
     <div class="wrap">
 
-      <div class="contact-layout">
+      <div class="contact-compact">
         <div class="contact-content">
-          <span class="eyebrow">Contact</span>
+          <div class="contact-head">
+            <div class="contact-photo">
+              <img src="./IMG/contact-suzan.jpg" alt="Suzan met een vintage telefoon" loading="lazy">
+            </div>
+            <span class="eyebrow">Contact</span>
+          </div>
           <h2>Laten we kennismaken.</h2>
-          <p>Heb je een vraag, een vacature of wil je iets bespreken? Stuur me gerust een e-mail of een bericht via LinkedIn.</p>
-          <a class="btn" href="mailto:suzanalkanbar@gmail.com">Stuur een e-mail ↗</a>
-        </div>
-        <div class="contact-photo">
-          <img src="./IMG/contact-suzan.jpg" alt="Suzan met een vintage telefoon" loading="lazy">
-        </div>
-      </div>
-
-      <form class="contact-form" action="https://api.web3forms.com/submit" method="POST"
-        data-ok="Bedankt! Je bericht is verstuurd. Ik mail je zo snel mogelijk terug." data-err="Er ging iets mis bij het versturen. Probeer het opnieuw of mail me direct." data-sending="Versturen…"
-        data-email-empty="Vul je e-mailadres in, zodat ik je kan terugmailen." data-email-bad="Dit e-mailadres klopt niet. Controleer het nog even." data-msg-empty="Schrijf een bericht van minimaal 10 tekens.">
-        <div class="form-head">
-          <span class="eyebrow">Stuur een bericht</span>
-          <h3>Schrijf me direct</h3>
-          <p>Laat je e-mailadres achter, dan kan ik je terugmailen.</p>
-        </div>
-        <div class="form-row">
-          <div class="field">
-            <label for="cf-name-nl">Naam <span class="opt">(optioneel)</span></label>
-            <input id="cf-name-nl" type="text" name="name" autocomplete="name">
-          </div>
-          <div class="field">
-            <label for="cf-email-nl">E-mailadres <span class="req" aria-label="verplicht">*</span></label>
-            <input id="cf-email-nl" type="email" name="email" autocomplete="email" placeholder="naam@voorbeeld.nl" required aria-describedby="cf-email-nl-err">
-            <p class="field-error" id="cf-email-nl-err"></p>
+          <p>Heb je een vraag, een vacature of wil je iets bespreken? Stuur me een bericht via het formulier, een e-mail of een bericht op LinkedIn.</p>
+          <div class="footer-links">
+            <a href="mailto:suzanalkanbar@gmail.com">suzanalkanbar@gmail.com</a>
+            <a href="https://www.linkedin.com/in/suzan-alkanbar/" target="_blank" rel="noopener">LinkedIn ↗</a>
+            <a href="./pdf/SuzanAlkanbar_CV.pdf" target="_blank">Download CV</a>
           </div>
         </div>
-        <div class="field">
-          <label for="cf-msg-nl">Bericht <span class="req" aria-label="verplicht">*</span></label>
-          <textarea id="cf-msg-nl" name="message" rows="5" minlength="10" placeholder="Waar wil je het over hebben?" required aria-describedby="cf-msg-nl-err"></textarea>
-          <p class="field-error" id="cf-msg-nl-err"></p>
-        </div>
-        <input type="hidden" name="access_key" value="c11bfd0e-7e9c-449b-991f-32e89269a931">
-        <input type="hidden" name="from_name" value="Portfolio Suzan Alkanbar">
-        <input type="hidden" name="subject" value="Nieuw bericht via je portfolio">
-        <input type="checkbox" name="botcheck" class="form-trap" tabindex="-1" autocomplete="off" aria-hidden="true">
-        <div class="form-actions">
-          <button type="submit" class="btn btn-solid">Verstuur bericht →</button>
-          <p class="form-status" role="status" aria-live="polite"></p>
-        </div>
-      </form>
 
-      <div class="footer-links">
-        <a href="mailto:suzanalkanbar@gmail.com">suzanalkanbar@gmail.com</a>
-        <a href="https://www.linkedin.com/in/suzan-alkanbar/" target="_blank" rel="noopener">LinkedIn ↗</a>
-        <a href="./pdf/SuzanAlkanbar_CV.pdf" target="_blank">Download CV</a>
+        <form class="contact-form" action="https://api.web3forms.com/submit" method="POST"
+          data-ok="Bedankt! Je bericht is verstuurd. Ik mail je zo snel mogelijk terug." data-err="Er ging iets mis bij het versturen. Probeer het opnieuw of mail me direct." data-sending="Versturen…"
+          data-email-empty="Vul je e-mailadres in, zodat ik je kan terugmailen." data-email-bad="Dit e-mailadres klopt niet. Controleer het nog even." data-msg-empty="Schrijf een bericht van minimaal 10 tekens.">
+          <h3>Stuur een bericht</h3>
+          <div class="form-row">
+            <div class="field">
+              <label for="cf-name-nl">Naam <span class="opt">(optioneel)</span></label>
+              <input id="cf-name-nl" type="text" name="name" autocomplete="name">
+            </div>
+            <div class="field">
+              <label for="cf-email-nl">E-mailadres <span class="req" aria-label="verplicht">*</span></label>
+              <input id="cf-email-nl" type="email" name="email" autocomplete="email" placeholder="naam@voorbeeld.nl" required aria-describedby="cf-email-nl-err">
+              <p class="field-error" id="cf-email-nl-err"></p>
+            </div>
+          </div>
+          <div class="field">
+            <label for="cf-msg-nl">Bericht <span class="req" aria-label="verplicht">*</span></label>
+            <textarea id="cf-msg-nl" name="message" rows="4" minlength="10" placeholder="Waar wil je het over hebben?" required aria-describedby="cf-msg-nl-err"></textarea>
+            <p class="field-error" id="cf-msg-nl-err"></p>
+          </div>
+          <input type="hidden" name="access_key" value="c11bfd0e-7e9c-449b-991f-32e89269a931">
+          <input type="hidden" name="from_name" value="Portfolio Suzan Alkanbar">
+          <input type="hidden" name="subject" value="Nieuw bericht via je portfolio">
+          <input type="checkbox" name="botcheck" class="form-trap" tabindex="-1" autocomplete="off" aria-hidden="true">
+          <div class="form-actions">
+            <button type="submit" class="btn btn-solid">Verstuur →</button>
+            <p class="form-status" role="status" aria-live="polite"></p>
+          </div>
+        </form>
       </div>
 
       <div class="footer-bottom">
