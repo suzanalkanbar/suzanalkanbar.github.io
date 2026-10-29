@@ -1910,3 +1910,48 @@ font-size:xx-large;
   nav.mainnav .menu a.pill{ padding:7px 12px; }
   nav.mainnav .lang-switch{ padding:5px 9px !important; gap:4px; }
 }
+
+/* ==========================================================================
+   About page — same look as the rest of the site
+   (hexagon background, white rounded cards, dark accent band)
+   ========================================================================== */
+.about-page main > section{ position:relative; }
+.about-page .eyebrow{ color:var(--terracotta); font-weight:700; letter-spacing:.16em; font-size:.78rem; }
+.about-page .sectionhead span.eyebrow{ font-size:.78rem; }
+
+/* Intro: same arch photo as the home page */
+.about-page .about-intro{ padding:clamp(48px,8vw,96px) 0 clamp(56px,8vw,100px); }
+.about-page .about-intro h1 em{ font-style:italic; font-weight:500; color:var(--terracotta); }
+.about-page .about-intro .eyebrow{ display:block; margin-top:1.2rem; }
+.about-page .hero-photo{ height:540px; }
+.about-page .blob{
+  width:100%; height:100%; transform:none; box-shadow:none;
+  border-radius:48% 48% 8% 8%; background:var(--sand);
+}
+.about-page .blob img{ transform:none; }
+
+/* Quote: dark band, like the moving line on the home page */
+.about-page .quote{ background:var(--ink); color:var(--cream); }
+.about-page .quote p{ color:var(--cream); }
+
+/* Sections sit on the hexagon background as white cards */
+.about-page .story{ background:transparent; }
+.about-page .story .split,
+.about-page main > section.wrap > .split,
+.about-page .story > .wrap:not(.split):not(.mini){
+  background:rgba(255,255,255,.92);
+  border-radius:28px;
+  padding:clamp(24px,4vw,48px);
+  box-shadow:0 8px 26px rgba(14,31,38,.06);
+}
+.about-page .q{ background:rgba(255,255,255,.95); }
+.about-page .tile{ background:rgba(255,255,255,.95); border-color:var(--line-dark); }
+.about-page .plus{ background:var(--sand); color:var(--terracotta); }
+.about-page .timeline{ border-left-color:var(--terracotta); }
+.about-page .event:before{ background:var(--terracotta); border-color:var(--white); }
+.about-page .event span{ color:var(--terracotta); }
+.about-page .pill{ background:var(--sand); color:var(--terracotta); }
+
+@media (max-width: 750px){
+  .about-page .hero-photo{ height:420px; }
+}

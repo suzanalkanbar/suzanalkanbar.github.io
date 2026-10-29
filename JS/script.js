@@ -28,7 +28,8 @@ document.addEventListener("DOMContentLoaded", () => {
   const autoSelectors = [
     ".work-card", ".play-card", ".skill-block", ".overview-block",
     ".story-block", ".result-block", ".onderzoek-card", ".kans-card",
-    ".goal-card", ".section-head", ".about-hero", ".stat"
+    ".goal-card", ".section-head", ".about-hero", ".stat",
+    ".sectionhead", ".tile", ".event"
   ];
   document.querySelectorAll(autoSelectors.join(",")).forEach(el => el.classList.add("reveal"));
 

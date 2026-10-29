@@ -8,19 +8,22 @@
    <link rel="alternate" hreflang="nl" href="https://suzanalkanbar.github.io/aboutme.html">
   <link rel="alternate" hreflang="en" href="https://suzanalkanbar.github.io/en/aboutme.html">
 </head>
- <body>
-  <nav class="nav wrap">
-   <a class="brand" href="index.html">Suzan Alkanbar</a>
-   <div class="links">
-    <a href="index.html">Home</a>
-    <a href="projecten.html">Werk</a>
-    <a href="#vragen">Over mij</a>
-    <a href="#contact">Contact</a>
-    <a href="en/aboutme.html" class="lang-switch" hreflang="en" aria-label="Switch to English"><span class="on">NL</span><span class="sep">/</span><span>EN</span></a>
-   </div>
-  </nav>
+ <body class="about-page">
+  <canvas id="bgCanvas"></canvas>
+  <header>
+    <nav class="mainnav">
+      <a href="index.html" class="brand">Suzan Alkanbar</a>
+      <ul class="menu">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="index.html#work">Mijn Werk</a></li>
+        <li><a href="aboutme.html" class="active">Over mij</a></li>
+        <li><a href="en/aboutme.html" class="lang-switch" hreflang="en" aria-label="Switch to English"><span class="on">NL</span><span class="sep">/</span><span>EN</span></a></li>
+        <li><a href="#contact" class="pill">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
   <main>
-   <header class="hero wrap">
+   <section class="hero wrap about-intro">
     <div>
      
      <h1>
@@ -30,7 +33,7 @@
       </em>
      </h1>
      <span class="eyebrow">
-      En ja dat is mijn geboortenaam
+      En ja, dat is mijn geboortenaam
      </span>
      <p>
       Een rustige, nieuwsgierige UX/UI-designer met veel energie voor nieuwe uitdagingen. Ik vind het leuk om mensen te leren kennen, 
@@ -39,7 +42,7 @@
      <p class="muted">
       Afgestudeerd in Communication &amp; Multimedia Design aan de HAN.
      </p>
-     <a class="btn fill" href="#vragen">
+     <a class="btn btn-solid" href="#vragen">
       Leer mij kennen ↓
      </a>
     </div>
@@ -49,7 +52,7 @@
      </div>
     
     </div>
-   </header>
+   </section>
    <section class="quote">
     <div class="wrap">
      <p>
@@ -242,9 +245,7 @@
      </div>
      <div class="timeline">
       <div class="event">
-       <span>
-        2022 
-       </span>
+       <span>2022 – 2026</span>
        <h3>
         Communication &amp; Multimedia Design — HAN
        </h3>
@@ -305,7 +306,7 @@
 
   <div class="polaroid">
     <div class="pic">
-      <img src="./IMG/deer.jpeg" alt="Suzan met een dier">
+      <img src="./IMG/kat.jpeg" alt="Suzan knuffelt een zwart-witte kat">
     </div>
     <p>Een beetje kattengek</p>
   </div>
@@ -319,14 +320,14 @@
 
   <div class="polaroid">
     <div class="pic">
-      <img src="./IMG/favorite char.jpeg" alt="Suzan met Totoro">
+      <img src="./IMG/totoro.jpeg" alt="Suzan met Totoro">
     </div>
     <p>Samen met Totoro</p>
   </div>
 
   <div class="polaroid">
     <div class="pic">
-      <img src="./IMG/fav moment.jpeg" alt="Suzan op haar favoriete plek">
+      <img src="./IMG/happy-place.jpeg" alt="Suzan op haar favoriete plek">
     </div>
     <p>Mijn happy place</p>
   </div>
@@ -364,6 +365,7 @@
 
     </div>
   </footer>
+  <script src="./JS/script.js"></script>
   <script>
    document.querySelectorAll('details.q').forEach(d=>d.addEventListener('toggle',()=>{if(d.open)document.querySelectorAll('details.q').forEach(other=>{if(other!==d)other.open=false})}));
   </script>

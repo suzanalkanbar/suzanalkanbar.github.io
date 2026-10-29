@@ -8,19 +8,22 @@
    <link rel="alternate" hreflang="nl" href="https://suzanalkanbar.github.io/aboutme.html">
   <link rel="alternate" hreflang="en" href="https://suzanalkanbar.github.io/en/aboutme.html">
 </head>
- <body>
-  <nav class="nav wrap">
-   <a class="brand" href="index.html">Suzan Alkanbar</a>
-   <div class="links">
-    <a href="index.html">Home</a>
-    <a href="projecten.html">Work</a>
-    <a href="#vragen">About me</a>
-    <a href="#contact">Contact</a>
-    <a href="../aboutme.html" class="lang-switch" hreflang="nl" aria-label="Schakel naar Nederlands"><span>NL</span><span class="sep">/</span><span class="on">EN</span></a>
-   </div>
-  </nav>
+ <body class="about-page">
+  <canvas id="bgCanvas"></canvas>
+  <header>
+    <nav class="mainnav">
+      <a href="index.html" class="brand">Suzan Alkanbar</a>
+      <ul class="menu">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="index.html#work">My Work</a></li>
+        <li><a href="aboutme.html" class="active">About me</a></li>
+        <li><a href="../aboutme.html" class="lang-switch" hreflang="nl" aria-label="Schakel naar Nederlands"><span>NL</span><span class="sep">/</span><span class="on">EN</span></a></li>
+        <li><a href="#contact" class="pill">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
   <main>
-   <header class="hero wrap">
+   <section class="hero wrap about-intro">
     <div>
      <h1>
       Hi, I'm
@@ -38,7 +41,7 @@
      <p class="muted">
       Graduated in Communication &amp; Multimedia Design at HAN University of Applied Sciences.
      </p>
-     <a class="btn fill" href="#vragen">
+     <a class="btn btn-solid" href="#vragen">
       Get to know me ↓
      </a>
     </div>
@@ -47,7 +50,7 @@
       <img alt="Portrait of Suzan" src="../IMG/meme.jpg"/>
      </div>
     </div>
-   </header>
+   </section>
    <section class="quote">
     <div class="wrap">
      <p>
@@ -218,7 +221,7 @@
      </div>
      <div class="timeline">
       <div class="event">
-       <span>2022</span>
+       <span>2022 – 2026</span>
        <h3>Communication &amp; Multimedia Design — HAN</h3>
        <p>From curiosity to research, interaction design and prototypes.</p>
       </div>
@@ -257,7 +260,7 @@
 
   <div class="polaroid">
     <div class="pic">
-      <img src="../IMG/deer.jpeg" alt="Suzan with an animal">
+      <img src="../IMG/kat.jpeg" alt="Suzan cuddling a black-and-white cat">
     </div>
     <p>A bit of a cat lover</p>
   </div>
@@ -271,14 +274,14 @@
 
   <div class="polaroid">
     <div class="pic">
-      <img src="../IMG/favorite char.jpeg" alt="Suzan with Totoro">
+      <img src="../IMG/totoro.jpeg" alt="Suzan with Totoro">
     </div>
     <p>Together with Totoro</p>
   </div>
 
   <div class="polaroid">
     <div class="pic">
-      <img src="../IMG/fav moment.jpeg" alt="Suzan at her favourite place">
+      <img src="../IMG/happy-place.jpeg" alt="Suzan at her favourite place">
     </div>
     <p>My happy place</p>
   </div>
@@ -315,6 +318,7 @@
 
     </div>
   </footer>
+  <script src="../JS/script.js"></script>
   <script>
    document.querySelectorAll('details.q').forEach(d=>d.addEventListener('toggle',()=>{if(d.open)document.querySelectorAll('details.q').forEach(other=>{if(other!==d)other.open=false})}));
   </script>
