@@ -1867,3 +1867,46 @@ font-size:xx-large;
 
 
 
+
+
+/* ==========================================================================
+   Language switch (NL / EN)
+   ========================================================================== */
+.lang-switch{
+  display:inline-flex !important; align-items:center; gap:6px;
+  border:1px solid var(--line-dark); border-radius:999px;
+  padding:6px 12px !important; text-decoration:none !important;
+  font-size:.75rem; font-weight:600; letter-spacing:.06em; text-transform:uppercase;
+  color:var(--ink); background:rgba(255,255,255,.55);
+  transition:border-color .2s, background .2s;
+}
+.lang-switch:hover{ border-color:var(--terracotta); background:var(--white); }
+.lang-switch::after{ display:none !important; }
+.lang-switch span{ opacity:.45; }
+.lang-switch span.on{ opacity:1; color:var(--terracotta); }
+.lang-switch .sep{ opacity:.3; }
+
+/* ==========================================================================
+   Shared footer (same on every page)
+   ========================================================================== */
+.site-footer{ position:relative; z-index:1; }
+.site-footer .footer-links,
+.site-footer .footer-bottom{ max-width:850px; margin-left:auto; margin-right:auto; }
+.site-footer .footer-links{ margin-top:3.5rem; }
+
+/* Small screens: menu gets its own row so nothing is cut off */
+.menu a, .links a{ white-space:nowrap; }
+@media (max-width: 640px){
+  nav.mainnav{ flex-wrap:wrap; row-gap:10px; padding:14px 16px; }
+  nav.mainnav.scrolled{ padding:10px 16px; }
+  nav.mainnav .menu{ width:100%; flex-wrap:wrap; justify-content:space-between; gap:10px 12px; }
+  nav.mainnav .menu a.pill{ padding:8px 14px; }
+  .nav{ height:auto; flex-wrap:wrap; padding:14px 0; row-gap:10px; }
+  .links{ width:100%; flex-wrap:wrap; justify-content:space-between; align-items:center; gap:10px 12px; }
+}
+@media (max-width: 640px){
+  nav.mainnav .menu{ gap:8px; }
+  nav.mainnav .menu a{ font-size:.68rem; letter-spacing:.03em; }
+  nav.mainnav .menu a.pill{ padding:7px 12px; }
+  nav.mainnav .lang-switch{ padding:5px 9px !important; gap:4px; }
+}

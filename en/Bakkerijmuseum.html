@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Bakery Museum Hattem | Suzan Alkanbar</title>
+  <link rel="stylesheet" href="../CSS/style.css" />
+  <link rel="alternate" hreflang="nl" href="https://suzanalkanbar.github.io/Bakkerijmuseum.html">
+  <link rel="alternate" hreflang="en" href="https://suzanalkanbar.github.io/en/Bakkerijmuseum.html">
+</head>
+
+<body class="ts-style">
+
+  <canvas id="bgCanvas"></canvas>
+
+    <header>
+    <nav class="mainnav">
+      <a href="index.html" class="brand">Suzan Alkanbar</a>
+      <ul class="menu">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="index.html#work" class="active">My Work</a></li>
+        <li><a href="aboutme.html">About me</a></li>
+        <li><a href="../Bakkerijmuseum.html" class="lang-switch" hreflang="nl" aria-label="Schakel naar Nederlands"><span>NL</span><span class="sep">/</span><span class="on">EN</span></a></li>
+        <li><a href="#contact" class="pill">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="case-study">
+
+    <header class="ts-hero" style="background-image: url('../IMG/Bakkerijmuseum.webp');">
+      <div class="ts-hero__inner">
+        <span class="eyebrow">Social design · Bakery Museum Hattem</span>
+        <h1>A timeline children play, not read</h1>
+        <p class="ts-hero__sub">An interactive, physical-digital timeline with mascot Belly the Bun, taking children aged 9–10 through the history of baking.</p>
+        <ul class="ts-hero__facts">
+          <li><strong>Role:</strong> UX / UI Designer</li>
+          <li><strong>Duration:</strong> 5 months</li>
+          <li><strong>Team:</strong> 3 students</li>
+          <li><strong>Tools:</strong> Figma, Miro, Arduino</li>
+        </ul>
+      </div>
+    </header>
+
+    <section class="project-overview">
+      <h2 class="intro">Introduction</h2>
+      <p>Together with two fellow students, we were given a school assignment to improve the timeline at the
+        Bakkerijmuseum (Bakery Museum) in Hattem. The museum believes it is important for children to learn about
+        history, craftsmanship and heritage at a young age, and to become curious about it. The existing timeline
+        consisted mainly of long text panels, so children quickly lost interest. The museum wanted a playful way to
+        make history, craftsmanship and heritage accessible and appealing.</p>
+
+      <div class="overview">
+        <div class="overview-block">
+          <h2>Context &amp; Challenge</h2>
+          <p>Children quickly lose interest in long, static panels. The challenge: make the timeline understandable
+            and playful without losing content. We explored both digital and physical interactions to design a
+            natural, active learning experience.</p>
+        </div>
+
+        <div class="overview-block">
+          <h2>Objective</h2>
+          <p>The goal of this project was to make the timeline of the Bakery Museum Hattem more accessible and
+            appealing to children (9–10 years), by combining information with short, playful tasks that hold their
+            attention and spark curiosity.</p>
+        </div>
+
+        <div class="overview-block">
+          <h2>Target audience</h2>
+          <p>Children with or without accompanying adults. They want to <strong>discover things themselves</strong>,
+            enjoy <strong>physical activity</strong> and <strong>role play</strong>, and lose interest when
+            explanations are too long or not interactive.</p>
+        </div>
+      </div>
+
+      <h2 class="ontwerpvraag">Design question</h2>
+      <p><i>How can the Bakery Museum Hattem make sure its informative timeline captures and holds the attention of
+          children?</i></p>
+    </section>
+
+    <section class="design-process ts-section">
+      <h2>Design Thinking</h2>
+      <p>For this project we applied the Design Thinking method, because it offers a structured yet flexible
+        approach to complex challenges. The process consists of five phases: Empathize, Define, Ideate, Prototype
+        and Test, with the children at the centre throughout. By working iteratively, insights from research could
+        be translated directly into designs and prototypes, which were tested and refined again and again.</p>
+
+      <div class="process-steps">
+        <div class="step">
+          <img src="../IMG/fase 1.png" alt="Empathize">
+          <p>Empathize</p>
+        </div>
+        <div class="step">
+          <img src="../IMG/fase 2.png" alt="Define">
+          <p>Define</p>
+        </div>
+        <div class="step">
+          <img src="../IMG/fase 3.png" alt="Ideate">
+          <p>Ideate</p>
+        </div>
+        <div class="step">
+          <img src="../IMG/fase 4.png" alt="Prototype">
+          <p>Prototype</p>
+        </div>
+        <div class="step">
+          <img src="../IMG/fase 5.png" alt="Test">
+          <p>Test</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="onderzoek ts-section ts-wave">
+      <h2>Research</h2>
+      <div class="story-block">
+        <p>The project started with short observations and conversations with children and their accompanying
+          adults, complemented by a co-reflection session in which ideas, expectations and frustrations were
+          gathered. The focus was on attention span, the need to move, how understandable the information was and
+          the role of rewards/feedback.</p>
+        <ul>
+          <li><strong>Short chunks:</strong> children benefit from clear, bite-sized information.</li>
+          <li><strong>Physical actions:</strong> pressing, turning and collecting increase motivation.</li>
+          <li><strong>Visual style:</strong> too much text or a style that is too childish makes them drop out.</li>
+          <li><strong>Accompanying adults:</strong> the design must also be clear for them.</li>
+        </ul>
+      </div>
+
+<div class="onderzoek-cards">
+
+  <div class="onderzoek-card">
+    <h3>Empathy map</h3>
+    <figure>
+      <img src="../IMG/empathie map bakkarij.png" alt="Empathy map" />
+      <figcaption>Empathy map with insights about the target audience.</figcaption>
+    </figure>
+  </div>
+
+  <div class="onderzoek-card">
+    <h3>Persona</h3>
+    <figure>
+      <img src="../IMG/persona.png" alt="Persona Bram" />
+      <figcaption>Bram, the young museum visitor, representing our target audience.</figcaption>
+    </figure>
+  </div>
+
+</div>
+
+    </section>
+
+    <section class="ts-section ts-wave">
+      <h2>Steps towards the solution</h2>
+
+      <div class="story-block">
+        <div class="story-text">
+          <h3>Visiting the museum</h3>
+          <p>Our process started with a visit to the Bakery Museum. We observed the space, measured heights and
+            walking routes and made notes directly on site. This gave us insight into what was practically possible
+            for placing interactive elements.</p>
+        </div>
+        <figure class="story-image">
+          <img src="../IMG/bakkarijmuseumlocatie.png" alt="Site visit at the museum" />
+          <figcaption>Site analysis with notes in the museum space.</figcaption>
+        </figure>
+      </div>
+
+      <div class="result-block reverse">
+        <div class="result-text">
+          <h3>Prototype: Belly the Bun</h3>
+          <p>A central element of our design became <strong>Belly the Bun</strong>, a child-friendly mascot that
+            returns in every game. Belly introduces the task, briefly explains what needs to happen and asks the
+            children for help — so children are actively involved and always have a familiar, playful starting point.</p>
+          <p>Belly keeps the tasks <strong>accessible and clear</strong>, while also challenging children to keep
+            playing and exploring. This approach replaced our earlier idea of the baker's glove, because Belly was a
+            better fit for the target audience.</p>
+        </div>
+        <figure class="result-image">
+          <img src="../IMG/belly.png" alt="Mascot Belly the Bun" />
+          <figcaption>Belly the Bun as the mascot for all games.</figcaption>
+        </figure>
+      </div>
+
+      <div class="ts-two ts-grid lofi-card">
+
+        <div class="research-text">
+          <h3>Lo-fi sketches</h3>
+          <figure class="research-figure">
+            <img src="../IMG/schetsen_bakkarijmuseum.png" alt="Lo-fi sketches" />
+            <figcaption>Lo-fi sketches of the timeline and tasks with Belly.</figcaption>
+          </figure>
+
+          <p>During the <strong>lo-fi sketching phase</strong> we explored how Belly the Bun could be placed in the
+            interactive timeline. The sketches show how each historical period got a short task:</p>
+          <ul>
+            <li><strong>Egypt:</strong> Belly shows how pharaohs handed out bread.</li>
+            <li><strong>Middle Ages:</strong> turn the mill and Belly explains what happens inside.</li>
+            <li><strong>Golden Age:</strong> help Belly decorate the bakery's shop window.</li>
+            <li><strong>Industry:</strong> a race against the conveyor belt with Belly cheering you on.</li>
+            <li><strong>Today:</strong> a quiz in which Belly challenges children to prove their knowledge.</li>
+          </ul>
+          <p>These lo-fi sketches let us quickly check whether Belly's role was clear and whether the games fit the
+            available space and the target audience.</p>
+        </div>
+
+      </div>
+    </section>
+
+<section class="ts-section ts-wave">
+  <h2>Result &amp; impact</h2>
+
+  <div class="result-block result-vertical">
+    <figure class="result-image">
+      <img src="../IMG/prototype.fysiek.png" alt="Physical prototype with Arduino" />
+      <figcaption>The physical prototype with Arduino interaction.</figcaption>
+    </figure>
+
+    <div class="result-text">
+      <p>The final result is an <strong>interactive digital timeline</strong> that guides children aged 9–10 through the history of baking in a playful way. Instead of long, static panels, we use <strong>short activities</strong> that give direct feedback.</p>
+
+      <p>Children can get started on their own, but accompanying adults are also invited to join in. This makes the experience not only educational but also something to share.</p>
+    </div>
+  </div>
+
+  <div class="result-block result-vertical">
+    <figure class="result-image">
+      <img src="../IMG/prototype.gif" alt="Illustration of the interactive timeline" />
+      <figcaption>Illustration of the interactive timeline in the museum.</figcaption>
+    </figure>
+
+    <div class="result-text">
+      <p>The timeline meets the following <strong>quality standards</strong>:</p>
+
+      <ul class="ts-bullets">
+        <li><strong>Attractive &amp; clear:</strong> bite-sized information, supported by sound, animation and colour.</li>
+        <li><strong>Independent &amp; intuitive:</strong> children can complete tasks themselves without much explanation.</li>
+        <li><strong>Interactive &amp; playful:</strong> mini-games and short tasks turn learning into a <em>game-based experience</em>.</li>
+        <li><strong>Challenging but short:</strong> activities don't last too long and hold attention.</li>
+        <li><strong>Practical &amp; expandable:</strong> a modular design that can easily be extended with new periods or installations.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+    <section class="next-project-section">
+      <a href="antea-group.html" class="next-project">Next project →</a>
+    </section>
+
+  </main>
+
+  <footer class="site-footer" id="contact">
+    <div class="wrap">
+
+      <div class="contact-layout">
+        <div class="contact-content">
+          <span class="eyebrow">Contact</span>
+          <h2>Let's get to know each other.</h2>
+          <p>Have a question, a vacancy or something you'd like to discuss? Feel free to send me an email or a message on LinkedIn.</p>
+          <a class="btn" href="mailto:suzankanbar09@gmail.com">Send an email ↗</a>
+        </div>
+        <div class="contact-photo">
+          <img src="../IMG/contact-suzan.jpg" alt="Suzan with a vintage telephone" loading="lazy">
+        </div>
+      </div>
+
+      <div class="footer-links">
+        <a href="mailto:suzankanbar09@gmail.com">suzankanbar09@gmail.com</a>
+        <a href="https://www.linkedin.com/in/suzan-alkanbar-8389bb1a6" target="_blank" rel="noopener">LinkedIn ↗</a>
+        <a href="../pdf/SuzanAlkanbar_CV.pdf" target="_blank">Download CV</a>
+      </div>
+
+      <div class="footer-bottom">
+        <span>© 2026 Suzan Alkanbar</span>
+        <span>Designed, built and hosted by Suzan Alkanbar</span>
+      </div>
+
+    </div>
+  </footer>
+
+  <script src="../JS/script.js"></script>
+</body>
+
+</html>

@@ -3,29 +3,20 @@
  <head>
   <meta charset="utf-8"/>
   <meta content="width=device-width, initial-scale=1" name="viewport"/>
-  <title>
-   Over mij — Suzan Alkanbar | Concept
-  </title>
+  <title>Over mij — Suzan Alkanbar</title>
   <link href="./CSS/style.css" rel="stylesheet"/>
- </head>
+   <link rel="alternate" hreflang="nl" href="https://suzanalkanbar.github.io/aboutme.html">
+  <link rel="alternate" hreflang="en" href="https://suzanalkanbar.github.io/en/aboutme.html">
+</head>
  <body>
   <nav class="nav wrap">
-   <a class="brand" href="index.html">
-    Suzan Alkanbar
-   </a>
+   <a class="brand" href="index.html">Suzan Alkanbar</a>
    <div class="links">
-    <a href="index.html">
-     Home
-    </a>
-    <a href="projecten.html">
-     Werk
-    </a>
-    <a href="#vragen">
-     Over mij
-    </a>
-    <a href="#contact">
-     Contact
-    </a>
+    <a href="index.html">Home</a>
+    <a href="projecten.html">Werk</a>
+    <a href="#vragen">Over mij</a>
+    <a href="#contact">Contact</a>
+    <a href="en/aboutme.html" class="lang-switch" hreflang="en" aria-label="Switch to English"><span class="on">NL</span><span class="sep">/</span><span>EN</span></a>
    </div>
   </nav>
   <main>
@@ -314,76 +305,64 @@
 
   <div class="polaroid">
     <div class="pic">
-      <img src="./IMG/deer.jpeg" alt="Suzan tijdens het hardlopen">
+      <img src="./IMG/deer.jpeg" alt="Suzan met een dier">
     </div>
     <p>Een beetje kattengek</p>
   </div>
 
   <div class="polaroid">
     <div class="pic">
-      <img src="./IMG/winter.jpeg" alt="Zelfgemaakt baksel">
+      <img src="./IMG/winter.jpeg" alt="Suzan in de winter">
     </div>
     <p>Team winter, altijd!</p>
   </div>
 
   <div class="polaroid">
     <div class="pic">
-      <img src="./IMG/favorite char.jpeg" alt="Een avond naar de film">
+      <img src="./IMG/favorite char.jpeg" alt="Suzan met Totoro">
     </div>
     <p>Samen met Totoro</p>
   </div>
 
   <div class="polaroid">
     <div class="pic">
-      <img src="./IMG/fav moment.jpeg" alt="Suzan met zonnebril">
+      <img src="./IMG/fav moment.jpeg" alt="Suzan op haar favoriete plek">
     </div>
     <p>Mijn happy place</p>
   </div>
 
 </div>
+    </div>
 
    </section>
   </main>
-  <footer class="end" id="contact">
-   
+  <footer class="site-footer" id="contact">
+    <div class="wrap">
 
-<div class="contact-layout">
+      <div class="contact-layout">
+        <div class="contact-content">
+          <span class="eyebrow">Contact</span>
+          <h2>Laten we kennismaken.</h2>
+          <p>Heb je een vraag, een vacature of wil je iets bespreken? Stuur me gerust een e-mail of een bericht via LinkedIn.</p>
+          <a class="btn" href="mailto:suzankanbar09@gmail.com">Stuur een e-mail ↗</a>
+        </div>
+        <div class="contact-photo">
+          <img src="./IMG/contact-suzan.jpg" alt="Suzan met een vintage telefoon" loading="lazy">
+        </div>
+      </div>
 
-  <div class="contact-content">
+      <div class="footer-links">
+        <a href="mailto:suzankanbar09@gmail.com">suzankanbar09@gmail.com</a>
+        <a href="https://www.linkedin.com/in/suzan-alkanbar-8389bb1a6" target="_blank" rel="noopener">LinkedIn ↗</a>
+        <a href="./pdf/SuzanAlkanbar_CV.pdf" target="_blank">Download CV</a>
+      </div>
 
-    <span class="eyebrow">
-      CONTACT
-    </span>
+      <div class="footer-bottom">
+        <span>© 2026 Suzan Alkanbar</span>
+        <span>Ontworpen, gebouwd en gehost door Suzan Alkanbar</span>
+      </div>
 
-    <h2>
-      Laten we kennismaken.
-    </h2>
-
-    <p>
-      Heb je een vraag of wil je iets bespreken?
-      Stuur me gerust een e-mail.
-    </p>
-
-    <a
-      class="btn"
-      href="mailto:suzankanbar09@gmail.com"
-    >
-      Stuur een e-mail ↗
-    </a>
-
-  </div>
-
-  <div class="contact-photo">
-    <img
-      src="./IMG/contact-suzan.jpg"
-      alt="Suzan met een vintage telefoon"
-      loading="lazy"
-    >
-  </div>
-
-</div>
-
-
+    </div>
   </footer>
   <script>
    document.querySelectorAll('details.q').forEach(d=>d.addEventListener('toggle',()=>{if(d.open)document.querySelectorAll('details.q').forEach(other=>{if(other!==d)other.open=false})}));
