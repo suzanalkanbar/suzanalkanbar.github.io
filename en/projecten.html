@@ -97,7 +97,7 @@
         </div>
       </div>
 
-      <form class="contact-form" action="https://formspree.io/f/FORMSPREE_ID" method="POST"
+      <form class="contact-form" action="https://api.web3forms.com/submit" method="POST"
         data-ok="Thank you! Your message has been sent. I'll get back to you as soon as possible." data-err="Something went wrong while sending. Please try again or email me directly." data-sending="Sending…">
         <h3>Or send me a message directly</h3>
         <div class="form-row">
@@ -111,8 +111,10 @@
         <label>Message
           <textarea name="message" rows="5" placeholder="What would you like to talk about?" required></textarea>
         </label>
-        <input type="hidden" name="_subject" value="New message via your portfolio">
-        <input type="text" name="_gotcha" class="form-trap" tabindex="-1" autocomplete="off" aria-hidden="true">
+        <input type="hidden" name="access_key" value="c11bfd0e-7e9c-449b-991f-32e89269a931">
+        <input type="hidden" name="from_name" value="Portfolio Suzan Alkanbar">
+        <input type="hidden" name="subject" value="New message via your portfolio">
+        <input type="checkbox" name="botcheck" class="form-trap" tabindex="-1" autocomplete="off" aria-hidden="true">
         <button type="submit" class="btn btn-light">Send message →</button>
         <p class="form-status" role="status" aria-live="polite"></p>
       </form>

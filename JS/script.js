@@ -184,7 +184,7 @@ document.addEventListener("DOMContentLoaded", () => {
   animate();
 });
 
-// Contact form — sends via Formspree without leaving the page
+// Contact form — sends via Web3Forms without leaving the page
 document.querySelectorAll(".contact-form").forEach(form => {
   const status = form.querySelector(".form-status");
   const button = form.querySelector("button[type=submit]");
@@ -201,7 +201,8 @@ document.querySelectorAll(".contact-form").forEach(form => {
         body: new FormData(form),
         headers: { Accept: "application/json" }
       });
-      if (!res.ok) throw new Error(res.status);
+      const data = await res.json().catch(() => ({}));
+      if (!res.ok || data.success === false) throw new Error(data.message || res.status);
       form.reset();
       status.textContent = form.dataset.ok;
       status.classList.add("ok");

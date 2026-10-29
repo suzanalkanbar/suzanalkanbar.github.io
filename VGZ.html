@@ -493,7 +493,7 @@
         </div>
       </div>
 
-      <form class="contact-form" action="https://formspree.io/f/FORMSPREE_ID" method="POST"
+      <form class="contact-form" action="https://api.web3forms.com/submit" method="POST"
         data-ok="Bedankt! Je bericht is verstuurd. Ik neem zo snel mogelijk contact met je op." data-err="Er ging iets mis bij het versturen. Probeer het opnieuw of mail me direct." data-sending="Versturen…">
         <h3>Of stuur direct een bericht</h3>
         <div class="form-row">
@@ -507,8 +507,10 @@
         <label>Bericht
           <textarea name="message" rows="5" placeholder="Waar wil je het over hebben?" required></textarea>
         </label>
-        <input type="hidden" name="_subject" value="Nieuw bericht via je portfolio">
-        <input type="text" name="_gotcha" class="form-trap" tabindex="-1" autocomplete="off" aria-hidden="true">
+        <input type="hidden" name="access_key" value="c11bfd0e-7e9c-449b-991f-32e89269a931">
+        <input type="hidden" name="from_name" value="Portfolio Suzan Alkanbar">
+        <input type="hidden" name="subject" value="Nieuw bericht via je portfolio">
+        <input type="checkbox" name="botcheck" class="form-trap" tabindex="-1" autocomplete="off" aria-hidden="true">
         <button type="submit" class="btn btn-light">Verstuur bericht →</button>
         <p class="form-status" role="status" aria-live="polite"></p>
       </form>
