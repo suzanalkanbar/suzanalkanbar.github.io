@@ -1957,32 +1957,42 @@ font-size:xx-large;
 }
 
 /* ==========================================================================
-   Contact form (footer)
+   Contact form (footer) — light card on the dark footer
    ========================================================================== */
-.contact-form{
+.site-footer .contact-form{
   max-width:850px; margin:3.5rem auto 0;
-  padding:clamp(22px,4vw,36px); border-radius:24px;
-  background:rgba(255,255,255,.06); border:1px solid rgba(255,255,255,.14);
-  display:grid; gap:18px;
+  padding:clamp(24px,4vw,44px); border-radius:28px;
+  background:var(--cream); color:var(--ink);
+  box-shadow:0 20px 50px rgba(0,0,0,.25);
+  display:grid; gap:20px;
 }
-.contact-form h3{ color:var(--white); font-size:1.4rem; margin:0; }
-.contact-form .form-row{ display:grid; grid-template-columns:1fr 1fr; gap:18px; }
-.contact-form label{ display:grid; gap:8px; font-size:.85rem; font-weight:600; color:#E8DCD5; }
+.contact-form .form-head .eyebrow{ color:var(--terracotta); margin-bottom:.4rem; }
+.contact-form .form-head h3{ color:var(--ink); font-size:clamp(1.5rem,2.6vw,2rem); margin:0; }
+.contact-form .form-head p{ margin:.5rem 0 0; color:#6e5b52; font-size:.98rem; }
+.contact-form .form-row{ display:grid; grid-template-columns:1fr 1fr; gap:20px; }
+.contact-form .field{ display:grid; gap:8px; align-content:start; }
+.contact-form label{ font-size:.85rem; font-weight:700; color:var(--ink); letter-spacing:.01em; }
+.contact-form label .opt{ font-weight:400; color:#8a7b74; }
+.contact-form label .req{ color:var(--terracotta); }
 .contact-form input, .contact-form textarea{
-  width:100%; font:inherit; font-weight:400; font-size:1rem; color:var(--white);
-  background:rgba(255,255,255,.08); border:1px solid rgba(255,255,255,.22);
-  border-radius:14px; padding:13px 16px; transition:border-color .2s, background .2s;
+  width:100%; font:inherit; font-size:1rem; color:var(--ink);
+  background:var(--white); border:1.5px solid rgba(53,42,39,.15);
+  border-radius:14px; padding:14px 16px; transition:border-color .2s, box-shadow .2s;
 }
-.contact-form textarea{ resize:vertical; min-height:130px; }
-.contact-form input::placeholder, .contact-form textarea::placeholder{ color:rgba(255,255,255,.45); }
+.contact-form textarea{ resize:vertical; min-height:140px; line-height:1.6; }
+.contact-form input::placeholder, .contact-form textarea::placeholder{ color:#a89a92; }
 .contact-form input:focus, .contact-form textarea:focus{
-  outline:none; border-color:var(--terracotta-bright); background:rgba(255,255,255,.12);
+  outline:none; border-color:var(--terracotta); box-shadow:0 0 0 4px rgba(185,124,94,.18);
 }
-.contact-form button{ justify-self:start; cursor:pointer; background:transparent; border-color:var(--white); color:var(--white); }
-.contact-form button:hover{ background:var(--white); color:var(--ink); }
-.contact-form button:disabled{ opacity:.6; cursor:wait; }
-.contact-form .form-trap{ position:absolute; left:-9999px; width:1px; height:1px; opacity:0; }
-.contact-form .form-status{ margin:0; font-size:.95rem; color:#E8DCD5; min-height:1.4em; }
-.contact-form .form-status.ok{ color:#9fd6a8; }
-.contact-form .form-status.err{ color:#f2a48a; }
+.contact-form .field.has-error input, .contact-form .field.has-error textarea{ border-color:#c0492b; }
+.contact-form .field-error{ margin:0; min-height:0; font-size:.85rem; color:#c0492b; }
+.contact-form .field-error:empty{ display:none; }
+.contact-form .form-actions{ display:flex; align-items:center; gap:18px; flex-wrap:wrap; }
+.contact-form button{ cursor:pointer; background:var(--ink); color:var(--cream); border:1.5px solid var(--ink); }
+.contact-form button:hover{ background:var(--terracotta); border-color:var(--terracotta); color:var(--white); }
+.contact-form button:disabled{ opacity:.6; cursor:wait; transform:none; }
+.contact-form .form-trap{ position:absolute !important; left:-9999px; width:1px; height:1px; opacity:0; pointer-events:none; }
+.contact-form .form-status{ margin:0; font-size:.95rem; font-weight:600; }
+.contact-form .form-status.ok{ color:#2f7a45; }
+.contact-form .form-status.err{ color:#c0492b; }
 @media (max-width:640px){ .contact-form .form-row{ grid-template-columns:1fr; } }

@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Antea Group — Interactief voorbereidingsboekje | Suzan Alkanbar</title>
-  <link rel="stylesheet" href="./CSS/style.css">
+  <link rel="stylesheet" href="./CSS/style.css?v=5">
   <link rel="alternate" hreflang="nl" href="https://suzanalkanbar.github.io/antea-group.html">
   <link rel="alternate" hreflang="en" href="https://suzanalkanbar.github.io/en/antea-group.html">
 </head>
@@ -896,25 +896,37 @@
       </div>
 
       <form class="contact-form" action="https://api.web3forms.com/submit" method="POST"
-        data-ok="Bedankt! Je bericht is verstuurd. Ik neem zo snel mogelijk contact met je op." data-err="Er ging iets mis bij het versturen. Probeer het opnieuw of mail me direct." data-sending="Versturen…">
-        <h3>Of stuur direct een bericht</h3>
-        <div class="form-row">
-          <label>Naam
-            <input type="text" name="name" autocomplete="name" required>
-          </label>
-          <label>E-mailadres
-            <input type="email" name="email" autocomplete="email" required>
-          </label>
+        data-ok="Bedankt! Je bericht is verstuurd. Ik mail je zo snel mogelijk terug." data-err="Er ging iets mis bij het versturen. Probeer het opnieuw of mail me direct." data-sending="Versturen…"
+        data-email-empty="Vul je e-mailadres in, zodat ik je kan terugmailen." data-email-bad="Dit e-mailadres klopt niet. Controleer het nog even." data-msg-empty="Schrijf een bericht van minimaal 10 tekens.">
+        <div class="form-head">
+          <span class="eyebrow">Stuur een bericht</span>
+          <h3>Schrijf me direct</h3>
+          <p>Laat je e-mailadres achter, dan kan ik je terugmailen.</p>
         </div>
-        <label>Bericht
-          <textarea name="message" rows="5" placeholder="Waar wil je het over hebben?" required></textarea>
-        </label>
+        <div class="form-row">
+          <div class="field">
+            <label for="cf-name-nl">Naam <span class="opt">(optioneel)</span></label>
+            <input id="cf-name-nl" type="text" name="name" autocomplete="name">
+          </div>
+          <div class="field">
+            <label for="cf-email-nl">E-mailadres <span class="req" aria-label="verplicht">*</span></label>
+            <input id="cf-email-nl" type="email" name="email" autocomplete="email" placeholder="naam@voorbeeld.nl" required aria-describedby="cf-email-nl-err">
+            <p class="field-error" id="cf-email-nl-err"></p>
+          </div>
+        </div>
+        <div class="field">
+          <label for="cf-msg-nl">Bericht <span class="req" aria-label="verplicht">*</span></label>
+          <textarea id="cf-msg-nl" name="message" rows="5" minlength="10" placeholder="Waar wil je het over hebben?" required aria-describedby="cf-msg-nl-err"></textarea>
+          <p class="field-error" id="cf-msg-nl-err"></p>
+        </div>
         <input type="hidden" name="access_key" value="c11bfd0e-7e9c-449b-991f-32e89269a931">
         <input type="hidden" name="from_name" value="Portfolio Suzan Alkanbar">
         <input type="hidden" name="subject" value="Nieuw bericht via je portfolio">
         <input type="checkbox" name="botcheck" class="form-trap" tabindex="-1" autocomplete="off" aria-hidden="true">
-        <button type="submit" class="btn btn-light">Verstuur bericht →</button>
-        <p class="form-status" role="status" aria-live="polite"></p>
+        <div class="form-actions">
+          <button type="submit" class="btn btn-solid">Verstuur bericht →</button>
+          <p class="form-status" role="status" aria-live="polite"></p>
+        </div>
       </form>
 
       <div class="footer-links">
@@ -932,7 +944,7 @@
   </footer>
 
 
-  <script src="./JS/script.js"></script>
+  <script src="./JS/script.js?v=5"></script>
 
 </body>
 

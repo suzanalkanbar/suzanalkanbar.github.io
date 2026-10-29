@@ -4,7 +4,7 @@
   <meta charset="utf-8"/>
   <meta content="width=device-width, initial-scale=1" name="viewport"/>
   <title>About me — Suzan Alkanbar</title>
-  <link href="../CSS/style.css" rel="stylesheet"/>
+  <link href="../CSS/style.css?v=5" rel="stylesheet"/>
    <link rel="alternate" hreflang="nl" href="https://suzanalkanbar.github.io/aboutme.html">
   <link rel="alternate" hreflang="en" href="https://suzanalkanbar.github.io/en/aboutme.html">
 </head>
@@ -304,25 +304,37 @@
       </div>
 
       <form class="contact-form" action="https://api.web3forms.com/submit" method="POST"
-        data-ok="Thank you! Your message has been sent. I'll get back to you as soon as possible." data-err="Something went wrong while sending. Please try again or email me directly." data-sending="Sending…">
-        <h3>Or send me a message directly</h3>
-        <div class="form-row">
-          <label>Name
-            <input type="text" name="name" autocomplete="name" required>
-          </label>
-          <label>Email address
-            <input type="email" name="email" autocomplete="email" required>
-          </label>
+        data-ok="Thank you! Your message has been sent. I'll reply as soon as possible." data-err="Something went wrong while sending. Please try again or email me directly." data-sending="Sending…"
+        data-email-empty="Please enter your email address so I can reply to you." data-email-bad="This email address doesn't look right. Please check it." data-msg-empty="Please write a message of at least 10 characters.">
+        <div class="form-head">
+          <span class="eyebrow">Send a message</span>
+          <h3>Write to me directly</h3>
+          <p>Leave your email address so I can reply to you.</p>
         </div>
-        <label>Message
-          <textarea name="message" rows="5" placeholder="What would you like to talk about?" required></textarea>
-        </label>
+        <div class="form-row">
+          <div class="field">
+            <label for="cf-name-en">Name <span class="opt">(optional)</span></label>
+            <input id="cf-name-en" type="text" name="name" autocomplete="name">
+          </div>
+          <div class="field">
+            <label for="cf-email-en">Email address <span class="req" aria-label="required">*</span></label>
+            <input id="cf-email-en" type="email" name="email" autocomplete="email" placeholder="name@example.com" required aria-describedby="cf-email-en-err">
+            <p class="field-error" id="cf-email-en-err"></p>
+          </div>
+        </div>
+        <div class="field">
+          <label for="cf-msg-en">Message <span class="req" aria-label="required">*</span></label>
+          <textarea id="cf-msg-en" name="message" rows="5" minlength="10" placeholder="What would you like to talk about?" required aria-describedby="cf-msg-en-err"></textarea>
+          <p class="field-error" id="cf-msg-en-err"></p>
+        </div>
         <input type="hidden" name="access_key" value="c11bfd0e-7e9c-449b-991f-32e89269a931">
         <input type="hidden" name="from_name" value="Portfolio Suzan Alkanbar">
         <input type="hidden" name="subject" value="New message via your portfolio">
         <input type="checkbox" name="botcheck" class="form-trap" tabindex="-1" autocomplete="off" aria-hidden="true">
-        <button type="submit" class="btn btn-light">Send message →</button>
-        <p class="form-status" role="status" aria-live="polite"></p>
+        <div class="form-actions">
+          <button type="submit" class="btn btn-solid">Send message →</button>
+          <p class="form-status" role="status" aria-live="polite"></p>
+        </div>
       </form>
 
       <div class="footer-links">
@@ -338,7 +350,7 @@
 
     </div>
   </footer>
-  <script src="../JS/script.js"></script>
+  <script src="../JS/script.js?v=5"></script>
   <script>
    document.querySelectorAll('details.q').forEach(d=>d.addEventListener('toggle',()=>{if(d.open)document.querySelectorAll('details.q').forEach(other=>{if(other!==d)other.open=false})}));
   </script>

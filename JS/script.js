@@ -184,17 +184,47 @@ document.addEventListener("DOMContentLoaded", () => {
   animate();
 });
 
-// Contact form — sends via Web3Forms without leaving the page
+// Contact form — checks the fields, then sends via Web3Forms without leaving the page
 document.querySelectorAll(".contact-form").forEach(form => {
+  form.noValidate = true; // use our own messages instead of the browser pop-ups
   const status = form.querySelector(".form-status");
   const button = form.querySelector("button[type=submit]");
+  const email = form.querySelector("[name=email]");
+  const message = form.querySelector("[name=message]");
   const label = button.textContent;
+
+  function setError(input, text) {
+    const field = input.closest(".field");
+    field.classList.toggle("has-error", !!text);
+    field.querySelector(".field-error").textContent = text || "";
+    input.setAttribute("aria-invalid", text ? "true" : "false");
+  }
+
+  function validate() {
+    const mail = email.value.trim();
+    const msg = message.value.trim();
+    let emailErr = "";
+    if (!mail) emailErr = form.dataset.emailEmpty;
+    else if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(mail)) emailErr = form.dataset.emailBad;
+    const msgErr = msg.length < 10 ? form.dataset.msgEmpty : "";
+    setError(email, emailErr);
+    setError(message, msgErr);
+    if (emailErr) email.focus(); else if (msgErr) message.focus();
+    return !emailErr && !msgErr;
+  }
+
+  // clear an error as soon as the visitor fixes the field
+  [email, message].forEach(input => input.addEventListener("input", () => {
+    if (input.closest(".field").classList.contains("has-error")) validate();
+  }));
+
   form.addEventListener("submit", async (e) => {
     e.preventDefault();
-    button.disabled = true;
-    button.textContent = form.dataset.sending;
     status.className = "form-status";
     status.textContent = "";
+    if (!validate()) return;
+    button.disabled = true;
+    button.textContent = form.dataset.sending;
     try {
       const res = await fetch(form.action, {
         method: "POST",
