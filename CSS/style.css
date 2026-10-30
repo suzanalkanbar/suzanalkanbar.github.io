@@ -2019,3 +2019,22 @@ font-size:xx-large;
 @media (max-width:520px){
   .contact-form .form-row{ grid-template-columns:1fr; }
 }
+
+/* ==========================================================================
+   Text islands — every block of text gets a solid background,
+   so nothing sits directly on the moving hexagon pattern
+   ========================================================================== */
+.hero-organic .hero-content,
+.about-page .about-intro > div:first-child,
+.section-head,
+.about-page .sectionhead{
+  background:rgba(251,243,232,.95);
+  border-radius:28px;
+  padding:clamp(24px,3.5vw,44px);
+  box-shadow:0 8px 26px rgba(14,31,38,.06);
+}
+.section-head,
+.about-page .sectionhead{ width:fit-content; max-width:min(760px,100%); }
+.about-page .sectionhead{ margin-inline:auto; }
+.section-head p:last-child,
+.about-page .sectionhead p:last-child{ margin-bottom:0; }
