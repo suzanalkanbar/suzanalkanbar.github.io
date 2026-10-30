@@ -2038,3 +2038,109 @@ font-size:xx-large;
 .about-page .sectionhead{ margin-inline:auto; }
 .section-head p:last-child,
 .about-page .sectionhead p:last-child{ margin-bottom:0; }
+
+/* ==========================================================================
+   Mobiel (≤ 640px): case studies leesbaar maken en foto's groot tonen.
+   Op telefoon stapelden kaarten-in-kaarten hun padding op, waardoor tekst
+   in een smalle kolom stond en foto's postzegelformaat kregen.
+   ========================================================================== */
+@media (max-width: 640px){
+
+  /* Hoofdkaarten: minder binnenruimte, zodat de tekst de breedte krijgt */
+  .case-study .project-overview,
+  .case-study .ts-section{
+    padding: 28px 18px;
+    margin: 18px 10px;
+    border-radius: 18px;
+    font-size: 1rem;
+    font-style: normal;
+  }
+  .case-study p,
+  .case-study li{ font-size: 1rem; line-height: 1.65; }
+  .case-study .ts-section > h2{ font-size: 1.75rem; margin-bottom: 1rem; }
+  .case-study h3{ font-size: 1.15rem; }
+
+  /* Kaarten binnen kaarten: compacter */
+  .case-study .story-block,
+  .case-study .result-block,
+  .case-study .result-block.result-vertical,
+  .case-study .onderzoek-card,
+  .case-study .kans-card,
+  .case-study .lofi-card,
+  .case-study .vgz-kans-card,
+  .case-study .goal-card,
+  .case-study .overview-block,
+  .case-study .ts-callout{
+    padding: 20px 16px;
+    gap: 18px;
+  }
+  .case-study .vgz-kansgebieden{ padding: 0; }
+
+  /* Alle meerkoloms-indelingen onder elkaar */
+  .case-study .kansgebieden-grid,
+  .case-study .vgz-overview,
+  .case-study .vgz-goals-grid,
+  .case-study .vgz-kans-grid,
+  .case-study .onderzoek-cards,
+  .case-study .overview,
+  .case-study .ts-two,
+  .case-study .ibm-loop-layout,
+  .case-study .story-block,
+  .case-study .result-block{
+    grid-template-columns: 1fr !important;
+  }
+
+  /* Foto's en schermen altijd over de volle breedte */
+  .case-study figure{ margin: 0; width: 100%; max-width: none; }
+  .case-study img{
+    width: 100% !important;
+    max-width: 100% !important;
+    height: auto;
+  }
+  .case-study figcaption{ font-size: .85rem; }
+  .case-study img[src*="belly"]{ width: 55% !important; margin: 0 auto; display: block; }
+
+  /* Design Thinking-fases: kleine iconen, 3 per rij in plaats van 5 smalle */
+  .process-steps{ flex-wrap: wrap; justify-content: center; gap: 10px; }
+  .process-steps .step{ flex: 0 0 calc(33.333% - 8px); padding: 12px 6px; }
+  .process-steps .step img{ width: 56px !important; margin: 0 auto 6px; }
+  .process-steps .step p{ font-size: .85rem; margin: 0; }
+
+  /* Testtabel als kaartjes in plaats van drie smalle kolommen */
+  .result-table thead{ display: none; }
+  .result-table,
+  .result-table tbody,
+  .result-table tr,
+  .result-table td{ display: block; width: 100%; }
+  .result-table tr{
+    background: #fff;
+    border-radius: 14px;
+    padding: 6px 4px;
+    margin-bottom: 14px;
+    box-shadow: 0 4px 14px rgba(70, 45, 35, .07);
+  }
+  .result-table td{ border-bottom: none; padding: .55rem .9rem; font-size: .95rem; }
+  .result-table td::before{
+    content: attr(data-label);
+    display: block;
+    font-family: 'Inter', sans-serif;
+    font-size: .68rem;
+    letter-spacing: .05em;
+    text-transform: uppercase;
+    color: var(--terracotta);
+    margin-bottom: 2px;
+  }
+
+  /* Interactieve PDF werkt niet in een telefoonbrowser: toon een knop */
+  .booklet-pdf-frame{ display: none; }
+  .booklet-pdf-fallback{ font-size: 0; margin-top: 8px; }
+  .booklet-pdf-fallback a{
+    display: inline-block;
+    font-size: 1rem;
+    padding: 14px 22px;
+    border-radius: 999px;
+    background: var(--ink);
+    color: #fff;
+    text-decoration: none;
+  }
+}
