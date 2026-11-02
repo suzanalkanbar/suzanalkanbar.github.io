@@ -14,16 +14,9 @@
   <meta name="theme-color" content="#B97C5E">
   <style>
     /* PolsSignaal — page-only styles */
-    .ps-hero{ display:block; min-height:0; padding:0; background:#000; }
-    .ps-hero::after{ display:none; }
-    .ps-hero-banner{ width:100%; background:#f7f5e5; }
-    .ps-hero-banner img{ width:100%; max-width:1400px; margin:0 auto; }
-    .ps-hero-band{ display:grid; grid-template-columns:1.1fr .9fr; gap:3rem; align-items:center;
-      max-width:1280px; margin:0 auto; padding:clamp(40px,6vw,80px) clamp(20px,4vw,56px); }
-    .ps-hero-band .ts-hero__inner h1{ font-size:clamp(2.2rem,5vw,4.2rem); }
-    .ps-hero-band img{ width:100%; max-width:520px; margin-left:auto; }
-
-    .ps-two{ display:grid; grid-template-columns:repeat(2,1fr); gap:1.4rem; }
+    .ps-two{ display:grid; grid-template-columns:repeat(3,1fr); gap:1.4rem; }
+    .ts-hero{ background-position:right center; }
+    @media (max-width:700px){ .ts-hero{ background-color:#f7f5e5; background-size:150% auto; background-position:right top; background-repeat:no-repeat; padding-top:330px; } }
     .ps-two .onderzoek-card p{ font-size:.97rem; color:#3d474c; margin:.6rem 0 0; }
 
     .ps-sw{ display:inline-block; width:14px; height:14px; border-radius:4px; vertical-align:-1px; margin-right:8px; }
@@ -75,8 +68,6 @@
 
     @media (max-width: 900px){
       .ps-down{ display:none; }
-      .ps-hero-band{ grid-template-columns:1fr; }
-      .ps-hero-band img{ margin:0 auto; }
       .ps-two, .ps-detail{ grid-template-columns:1fr; }
     }
   </style>
@@ -101,16 +92,12 @@
   <main class="case-study">
 
     <!-- HERO -->
-    <header class="ts-hero ps-hero">
-      <div class="ps-hero-banner"><img src="../IMG/polssignaal/polssignaal-banner.jpg" alt="Smartwatch op NS Stations"></div>
-      <div class="ps-hero-band">
-        <div class="ts-hero__inner">
-          <span class="eyebrow">NS Dutch Railways · Smartwatch · Accessibility</span>
-          <h1>An announcement you can feel</h1>
-          <p class="ts-hero__sub">A smartwatch app that turns station announcements into vibrations and a clear alert on the wrist, for travellers who can’t hear the announcement.</p>
-          <ul class="ts-hero__facts"><li><strong>Role:</strong> UX/UI &amp; Interaction Designer</li><li><strong>Duration:</strong> 3 months</li><li><strong>Team:</strong> Solo project</li><li><strong>Platform:</strong> watchOS</li><li><strong>Tools:</strong> Figma, ProtoPie</li></ul>
-        </div>
-        <img src="../IMG/polssignaal/polssignaal-trio.png" alt="PolsSignaal watch screens">
+    <header class="ts-hero" style="background-image: url('../IMG/polssignaal/polssignaal-cover.jpg');">
+      <div class="ts-hero__inner">
+        <span class="eyebrow">NS Dutch Railways · Smartwatch · Accessibility</span>
+        <h1>An announcement you can feel</h1>
+        <p class="ts-hero__sub">A smartwatch app that turns station announcements into vibrations and a clear alert on the wrist, for travellers who can’t hear the announcement.</p>
+        <ul class="ts-hero__facts"><li><strong>Role:</strong> UX/UI &amp; Interaction Designer</li><li><strong>Duration:</strong> 3 months</li><li><strong>Team:</strong> Solo project</li><li><strong>Platform:</strong> watchOS</li><li><strong>Tools:</strong> Figma, ProtoPie</li></ul>
       </div>
     </header>
 
@@ -118,10 +105,11 @@
     <section class="project-overview">
       <h2 class="intro">Introduction</h2>
       <p>When a train changes platform, it is announced over the speakers. Deaf and hard-of-hearing travellers miss that message, and often the train with it. I designed a watch app that replaces the announcement with something you can <strong>feel and see</strong>.</p>
+      <p>The brief came from school: NS (Dutch Railways) doesn’t have a smartwatch touchpoint yet, and the question was how a watch could help travellers at the station. I chose to focus on deaf and hard-of-hearing travellers, because they miss the most when something changes.</p>
       <div class="overview">
         <div class="overview-block"><h2>Problem</h2><p>Announcements are audio only. Departure boards have to be watched constantly, and NS notifications arrive on a phone in your pocket.</p></div>
         <div class="overview-block"><h2>Users</h2><p>Deaf and hard-of-hearing train travellers, on a busy platform, under time pressure.</p></div>
-        <div class="overview-block"><h2>My role</h2><p>Research, concept, interaction design and the complete watch design in Figma and ProtoPie. The phone screens are the existing NS app, lightly adapted.</p></div>
+        <div class="overview-block"><h2>My role</h2><p>Solo project: research, concept, interaction design and the complete watch design in Figma and ProtoPie, built with the NS design system. The phone screens are the existing NS app, lightly adapted.</p></div>
       </div>
       <h2 class="ontwerpvraag">Design question</h2>
       <p><i>How can NS inform deaf and hard-of-hearing travellers in time about platform changes and delays at the station, without them depending on sound?</i></p>
@@ -134,6 +122,7 @@
       <div class="ps-two">
         <div class="onderzoek-card"><span class="eyebrow">01 · The NS system</span><h3>What can the watch build on?</h3><p>I studied the journey planner, the notifications in the NS app, NS InfoPlus and the NS design system.</p></div>
         <div class="onderzoek-card"><span class="eyebrow">02 · Signals without sound</span><h3>Feel and see</h3><p>Deaf and hard-of-hearing people receive notifications through vibrations and visual signals. You feel a vibration even when the screen is off.</p></div>
+        <div class="onderzoek-card"><span class="eyebrow">03 · Existing designs</span><h3>How do you alert someone who can’t hear?</h3><p>I looked at existing designs made for deaf and hard-of-hearing people, and at how to alert someone without sound.</p></div>
       </div>
       <div class="ts-callout">Why a smartwatch? It is always on the wrist, and it reaches the traveller without sound and without them having to look for anything.</div>
     </section>

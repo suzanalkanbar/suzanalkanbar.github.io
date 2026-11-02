@@ -14,16 +14,9 @@
   <meta name="theme-color" content="#B97C5E">
   <style>
     /* PolsSignaal — page-only styles */
-    .ps-hero{ display:block; min-height:0; padding:0; background:#000; }
-    .ps-hero::after{ display:none; }
-    .ps-hero-banner{ width:100%; background:#f7f5e5; }
-    .ps-hero-banner img{ width:100%; max-width:1400px; margin:0 auto; }
-    .ps-hero-band{ display:grid; grid-template-columns:1.1fr .9fr; gap:3rem; align-items:center;
-      max-width:1280px; margin:0 auto; padding:clamp(40px,6vw,80px) clamp(20px,4vw,56px); }
-    .ps-hero-band .ts-hero__inner h1{ font-size:clamp(2.2rem,5vw,4.2rem); }
-    .ps-hero-band img{ width:100%; max-width:520px; margin-left:auto; }
-
-    .ps-two{ display:grid; grid-template-columns:repeat(2,1fr); gap:1.4rem; }
+    .ps-two{ display:grid; grid-template-columns:repeat(3,1fr); gap:1.4rem; }
+    .ts-hero{ background-position:right center; }
+    @media (max-width:700px){ .ts-hero{ background-color:#f7f5e5; background-size:150% auto; background-position:right top; background-repeat:no-repeat; padding-top:330px; } }
     .ps-two .onderzoek-card p{ font-size:.97rem; color:#3d474c; margin:.6rem 0 0; }
 
     .ps-sw{ display:inline-block; width:14px; height:14px; border-radius:4px; vertical-align:-1px; margin-right:8px; }
@@ -75,8 +68,6 @@
 
     @media (max-width: 900px){
       .ps-down{ display:none; }
-      .ps-hero-band{ grid-template-columns:1fr; }
-      .ps-hero-band img{ margin:0 auto; }
       .ps-two, .ps-detail{ grid-template-columns:1fr; }
     }
   </style>
@@ -101,16 +92,12 @@
   <main class="case-study">
 
     <!-- HERO -->
-    <header class="ts-hero ps-hero">
-      <div class="ps-hero-banner"><img src="./IMG/polssignaal/polssignaal-banner.jpg" alt="Smartwatch op NS Stations"></div>
-      <div class="ps-hero-band">
-        <div class="ts-hero__inner">
-          <span class="eyebrow">NS · Smartwatch · Toegankelijkheid</span>
-          <h1>Een omroep die je kunt voelen</h1>
-          <p class="ts-hero__sub">Een smartwatch-app die omroepberichten op het station vertaalt naar trillingen en een duidelijke alert op de pols, voor reizigers die de omroep niet kunnen horen.</p>
-          <ul class="ts-hero__facts"><li><strong>Rol:</strong> UX/UI &amp; Interaction Designer</li><li><strong>Periode:</strong> 3 maanden</li><li><strong>Team:</strong> Individueel</li><li><strong>Platform:</strong> watchOS</li><li><strong>Tools:</strong> Figma, ProtoPie</li></ul>
-        </div>
-        <img src="./IMG/polssignaal/polssignaal-trio.png" alt="PolsSignaal watch screens">
+    <header class="ts-hero" style="background-image: url('./IMG/polssignaal/polssignaal-cover.jpg');">
+      <div class="ts-hero__inner">
+        <span class="eyebrow">NS · Smartwatch · Toegankelijkheid</span>
+        <h1>Een omroep die je kunt voelen</h1>
+        <p class="ts-hero__sub">Een smartwatch-app die omroepberichten op het station vertaalt naar trillingen en een duidelijke alert op de pols, voor reizigers die de omroep niet kunnen horen.</p>
+        <ul class="ts-hero__facts"><li><strong>Rol:</strong> UX/UI &amp; Interaction Designer</li><li><strong>Periode:</strong> 3 maanden</li><li><strong>Team:</strong> Individueel</li><li><strong>Platform:</strong> watchOS</li><li><strong>Tools:</strong> Figma, ProtoPie</li></ul>
       </div>
     </header>
 
@@ -118,10 +105,11 @@
     <section class="project-overview">
       <h2 class="intro">Introductie</h2>
       <p>Bij een spoorwijziging klinkt er een omroep. Wie doof of slechthorend is, mist dat bericht, en daarmee vaak de trein. Ik ontwierp een watch-app die de omroep vervangt door iets wat je <strong>voelt en ziet</strong>.</p>
+      <p>De opdracht kwam van school: NS heeft nog geen smartwatch-touchpoint, en de vraag was hoe een watch reizigers op het station kan helpen. Zelf koos ik ervoor om me te richten op dove en slechthorende reizigers, omdat zij bij een wijziging het meest missen.</p>
       <div class="overview">
         <div class="overview-block"><h2>Probleem</h2><p>De omroep is alleen hoorbaar. Borden moet je zelf in de gaten houden, en NS-meldingen komen binnen op een telefoon in je zak.</p></div>
         <div class="overview-block"><h2>Doelgroep</h2><p>Dove en slechthorende treinreizigers, op een druk perron en onder tijdsdruk.</p></div>
-        <div class="overview-block"><h2>Mijn rol</h2><p>Onderzoek, concept, interactieontwerp en het volledige watch-ontwerp in Figma en ProtoPie. De telefoonschermen zijn de bestaande NS-app, licht aangepast.</p></div>
+        <div class="overview-block"><h2>Mijn rol</h2><p>Individueel: onderzoek, concept, interactieontwerp en het volledige watch-ontwerp in Figma en ProtoPie, gebouwd met het NS design system. De telefoonschermen zijn de bestaande NS-app, licht aangepast.</p></div>
       </div>
       <h2 class="ontwerpvraag">Ontwerpvraag</h2>
       <p><i>Hoe kan de NS dove en slechthorende reizigers op tijd informeren over spoorwijzigingen en vertragingen op het station, zonder dat zij afhankelijk zijn van geluid?</i></p>
@@ -134,6 +122,7 @@
       <div class="ps-two">
         <div class="onderzoek-card"><span class="eyebrow">01 · Het NS-systeem</span><h3>Waar sluit de watch op aan?</h3><p>Ik bestudeerde de reisplanner, de meldingen in de NS-app, NS InfoPlus en het NS design system.</p></div>
         <div class="onderzoek-card"><span class="eyebrow">02 · Signalen zonder geluid</span><h3>Voelen en zien</h3><p>Dove en slechthorende mensen krijgen meldingen via trillingen en visuele signalen. Een trilling voel je ook als het scherm uit staat.</p></div>
+        <div class="onderzoek-card"><span class="eyebrow">03 · Bestaande ontwerpen</span><h3>Hoe waarschuw je iemand die niet hoort?</h3><p>Ik bekeek ontwerpen die al voor doven en slechthorenden gemaakt zijn, en hoe je iemand waarschuwt zonder geluid.</p></div>
       </div>
       <div class="ts-callout">Waarom een smartwatch? Hij zit altijd op de pols en bereikt de reiziger zonder geluid en zonder dat die hoeft te zoeken.</div>
     </section>
