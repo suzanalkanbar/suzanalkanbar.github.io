@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>PolsSignaal NS — Een omroep die je kunt voelen | Suzan Alkanbar</title>
+  <title>PolsSignaal — Een omroep die je voelt | Suzan Alkanbar</title>
   <link rel="stylesheet" href="./CSS/style.css?v=9">
   <link rel="alternate" hreflang="nl" href="https://suzanalkanbar.github.io/PolsSignaal.html">
   <link rel="alternate" hreflang="en" href="https://suzanalkanbar.github.io/en/PolsSignaal.html">
@@ -82,10 +82,19 @@
     .case-study .ps-row .w img{ width:128px !important; max-width:none !important; height:auto !important; }
     .case-study .ps-row .p img{ width:118px !important; max-width:none !important; height:auto !important; }
 
+    .ps-steps{ list-style:none; padding:0; margin:1.6rem 0 0; display:grid; grid-template-columns:repeat(4,1fr); gap:1.2rem; counter-reset:st; }
+    .ps-steps li{ background:var(--white); border-radius:16px; padding:1.3rem; box-shadow:0 8px 26px rgba(14,31,38,.05); counter-increment:st; }
+    .ps-steps li::before{ content:"0" counter(st); display:block; font-size:.72rem; font-weight:700; letter-spacing:.14em; color:var(--terracotta); margin-bottom:.5rem; }
+    .ps-steps h3{ font-size:1.05rem; margin:0 0 .4rem; }
+    .ps-steps p{ font-size:.93rem; color:#3d474c; margin:0; line-height:1.55; }
+    .ps-inzicht{ margin-top:.8rem !important; padding-top:.7rem; border-top:1px solid var(--line-dark); }
+    .ps-result{ display:grid; grid-template-columns:1fr 1fr; gap:1.4rem; margin-top:1.4rem; }
     @media (max-width: 900px){
+      .ps-steps, .ps-result{ grid-template-columns:1fr 1fr; }
       .ps-down{ display:none; }
       .ps-two, .ps-detail{ grid-template-columns:1fr; }
     }
+    @media (max-width: 600px){ .ps-steps, .ps-result{ grid-template-columns:1fr; } }
   </style>
 </head>
 
@@ -110,64 +119,82 @@
     <!-- HERO -->
     <header class="ts-hero" style="background-image: url('./IMG/polssignaal/polssignaal-cover.jpg');">
       <div class="ts-hero__inner">
-        <span class="eyebrow">NS · Smartwatch · Toegankelijkheid</span>
-        <h1>Een omroep die je kunt voelen</h1>
-        <p class="ts-hero__sub">Een smartwatch-app die omroepberichten op het station vertaalt naar trillingen en een duidelijke alert op de pols, voor reizigers die de omroep niet kunnen horen.</p>
-        <ul class="ts-hero__facts"><li><strong>Rol:</strong> UX/UI &amp; Interaction Designer</li><li><strong>Periode:</strong> 3 maanden</li><li><strong>Team:</strong> Individueel</li><li><strong>Platform:</strong> watchOS</li><li><strong>Tools:</strong> Figma, ProtoPie</li></ul>
+        <span class="eyebrow">NS · Smartwatch-app · Toegankelijkheid</span>
+        <h1>Een omroep die je voelt</h1>
+        <p class="ts-hero__sub">Een smartwatch-app die dove en slechthorende reizigers waarschuwt als hun trein van spoor wisselt. Met een trilling en een duidelijk scherm, in plaats van geluid.</p>
+        <ul class="ts-hero__facts"><li><strong>Rol:</strong> UX/UI &amp; Interaction Designer</li><li><strong>Periode:</strong> 3 maanden</li><li><strong>Team:</strong> Individueel</li><li><strong>Platform:</strong> Apple Watch</li><li><strong>Tools:</strong> Figma, ProtoPie</li></ul>
       </div>
     </header>
 
-    <!-- INTRO -->
+    <!-- INTRODUCTIE -->
     <section class="project-overview">
       <h2 class="intro">Introductie</h2>
-      <p>Bij een spoorwijziging klinkt er een omroep. Wie doof of slechthorend is, mist dat bericht, en daarmee vaak de trein. Ik ontwierp een watch-app die de omroep vervangt door iets wat je <strong>voelt en ziet</strong>.</p>
-      <p>De opdracht kwam van school: NS heeft nog geen smartwatch-touchpoint, en de vraag was hoe een watch reizigers op het station kan helpen. Zelf koos ik ervoor om me te richten op dove en slechthorende reizigers, omdat zij bij een wijziging het meest missen.</p>
+      <p>Verandert het spoor van je trein, dan hoor je dat via de omroep. Maar wat als je de omroep niet kunt horen? Dove en slechthorende reizigers missen dit bericht, en daardoor soms hun trein.</p>
+      <p>Voor een schoolopdracht onderzocht ik hoe een smartwatch reizigers van NS kan helpen op het station. NS heeft nog geen app voor de smartwatch. Ik koos ervoor om te ontwerpen voor dove en slechthorende reizigers, omdat zij bij een wijziging het meeste missen.</p>
       <div class="overview">
-        <div class="overview-block"><h2>Probleem</h2><p>De omroep is alleen hoorbaar. Borden moet je zelf in de gaten houden, en NS-meldingen komen binnen op een telefoon in je zak.</p></div>
-        <div class="overview-block"><h2>Doelgroep</h2><p>Dove en slechthorende treinreizigers, op een druk perron en onder tijdsdruk.</p></div>
-        <div class="overview-block"><h2>Mijn rol</h2><p>Individueel: onderzoek, concept, interactieontwerp en het volledige watch-ontwerp in Figma en ProtoPie, gebouwd met het NS design system. De telefoonschermen zijn de bestaande NS-app, licht aangepast.</p></div>
+        <div class="overview-block"><h2>Probleem</h2><p>Belangrijke wijzigingen worden vaak alleen omgeroepen. De borden moet je zelf steeds in de gaten houden, en meldingen van de NS-app komen binnen op een telefoon in je zak.</p></div>
+        <div class="overview-block"><h2>Doelgroep</h2><p>Dove en slechthorende treinreizigers die op een druk perron staan en weinig tijd hebben om te reageren.</p></div>
+        <div class="overview-block"><h2>Mijn rol</h2><p>Ik deed dit project alleen: onderzoek, concept, schetsen en het volledige ontwerp van de watch-app in Figma en ProtoPie. Ik gebruikte het NS design system. De telefoonschermen zijn de bestaande NS-app, een beetje aangepast.</p></div>
       </div>
       <h2 class="ontwerpvraag">Ontwerpvraag</h2>
-      <p><i>Hoe kan de NS dove en slechthorende reizigers op tijd informeren over spoorwijzigingen en vertragingen op het station, zonder dat zij afhankelijk zijn van geluid?</i></p>
+      <p><i>Hoe kan NS dove en slechthorende reizigers op tijd laten weten dat hun trein van spoor wisselt of vertraagd is, zonder dat ze geluid nodig hebben?</i></p>
     </section>
 
-    <!-- RESEARCH -->
+    <!-- AANPAK -->
+    <section class="ts-section">
+      <span class="eyebrow">Aanpak</span>
+      <h2>Van onderzoek naar prototype</h2>
+      <p>Ik werkte in vier stappen. Bij elke stap gebruikte ik wat ik in de stap ervoor had geleerd.</p>
+      <ol class="ps-steps">
+        <li><h3>Onderzoeken</h3><p>Hoe werkt de NS-app nu, en wat gaat er mis voor dove reizigers?</p></li>
+        <li><h3>Principes bepalen</h3><p>Vier vaste regels waar elk scherm aan moet voldoen.</p></li>
+        <li><h3>Schetsen</h3><p>Per belangrijke stap vier ideeën op papier, en daarna één keuze.</p></li>
+        <li><h3>Ontwerpen</h3><p>De gekozen ideeën uitwerken in Figma en testen als prototype in ProtoPie.</p></li>
+      </ol>
+    </section>
+
+    <!-- ONDERZOEK -->
     <section class="ts-section">
       <span class="eyebrow">Onderzoek</span>
-      <h2>Hoe krijg je de omroep mee als je hem niet hoort?</h2>
+      <h2>Wat missen dove reizigers op het station?</h2>
       <div class="ps-two">
-        <div class="onderzoek-card"><span class="eyebrow">01 · Het NS-systeem</span><h3>Waar sluit de watch op aan?</h3><p>Ik bestudeerde de reisplanner, de meldingen in de NS-app, NS InfoPlus en het NS design system.</p></div>
-        <div class="onderzoek-card"><span class="eyebrow">02 · Dove reizigers op het station</span><h3>Wat gaat er mis?</h3><p>Updates komen vaak alleen via de omroep. Dove reizigers missen daardoor spoorwijzigingen en volgen dan de menigte, die hen vaak naar de verkeerde plek brengt.</p><p class="ps-src"><a href="https://qut.edu.au/news/realfocus/for-deaf-people-train-travel-can-be-a-gamble.-but-an-ai-powered-auslan-avatar-can-help" target="_blank" rel="noopener">Bron ↗</a></p></div>
-        <div class="onderzoek-card"><span class="eyebrow">03 · Waarschuwen zonder geluid</span><h3>Hoe doen bestaande ontwerpen het?</h3><p>Een trilwekker, flitsende deurbel of rookmelder voor doven combineert licht en trilling. De trilling voel je ook als je niet kijkt, het licht zie je ook als je de trilling mist.</p><p class="ps-src"><a href="https://us.bellman.com/blogs/news/how-do-deaf-alert-systems-work" target="_blank" rel="noopener">Bron ↗</a></p></div>
+        <div class="onderzoek-card"><span class="eyebrow">01 · De NS-app</span><h3>Waar past de watch bij?</h3><p>Ik bekeek de reisplanner, de meldingen in de NS-app, het systeem achter de reisinformatie en het NS design system.</p><p class="ps-inzicht"><strong>Inzicht:</strong> de reis staat al in de NS-app. De watch kan die gegevens gebruiken.</p></div>
+        <div class="onderzoek-card"><span class="eyebrow">02 · De reiziger</span><h3>Wat gaat er mis?</h3><p>Wijzigingen worden vaak alleen omgeroepen. Dove reizigers lopen dan achter andere mensen aan, en komen zo soms op de verkeerde plek uit.</p><p class="ps-inzicht"><strong>Inzicht:</strong> het probleem is niet de informatie, maar hoe die bij de reiziger komt.</p><p class="ps-src"><a href="https://qut.edu.au/news/realfocus/for-deaf-people-train-travel-can-be-a-gamble.-but-an-ai-powered-auslan-avatar-can-help" target="_blank" rel="noopener">Bron ↗</a></p></div>
+        <div class="onderzoek-card"><span class="eyebrow">03 · Bestaande oplossingen</span><h3>Hoe waarschuw je zonder geluid?</h3><p>Ik keek naar een trilwekker, een flitsende deurbel en een rookmelder voor doven. Ze gebruiken allemaal licht én trilling.</p><p class="ps-inzicht"><strong>Inzicht:</strong> een trilling voel je ook als je niet kijkt. Licht zie je ook als je de trilling mist.</p><p class="ps-src"><a href="https://us.bellman.com/blogs/news/how-do-deaf-alert-systems-work" target="_blank" rel="noopener">Bron ↗</a></p></div>
       </div>
-      <div class="ts-callout">Waarom een smartwatch? Hij zit altijd op de pols en bereikt de reiziger zonder geluid en zonder dat die hoeft te zoeken.</div>
+      <div class="ts-callout"><strong>Waarom een smartwatch?</strong><br><br>Een watch zit altijd op je pols. Je voelt hem direct, ook als je telefoon in je tas zit. Zo bereikt het bericht de reiziger zonder geluid en zonder dat hij zelf hoeft te zoeken.</div>
     </section>
 
-    <!-- DESIGN DECISIONS -->
+    <!-- ONTWERPPRINCIPES -->
     <section class="ts-section">
-      <span class="eyebrow">Ontwerpkeuzes</span>
-      <h2>Ontwerpen voor voelen en zien</h2>
+      <span class="eyebrow">Ontwerpprincipes</span>
+      <h2>Vier regels voor het ontwerp</h2>
+      <p>Uit het onderzoek haalde ik vier regels. Elk scherm moest hieraan voldoen.</p>
       <div class="kansgebieden-grid">
-        <div class="kans-card"><h3>Voelen vóór lezen</h3><p>Elke wijziging begint met een trilling, die sterker wordt zolang de reiziger niet reageert.</p></div>
-        <div class="kans-card"><h3><span class="ps-sw" style="background:#FFC917"></span>Geel is rust, <span class="ps-sw" style="background:#DB0029"></span>rood is actie</h3><p>De rand vertelt de status zonder tekst: geel als alles klopt, rood zolang een wijziging niet bevestigd is.</p></div>
-        <div class="kans-card"><h3>Eerst twee woorden</h3><p>Eerst alleen “⚠ Spoor wijziging”. Blijft de reiziger kijken, dan verschijnt het nieuwe spoor (watchOS: short look → long look).</p></div>
-        <div class="kans-card"><h3>Zwart met NS-kleuren</h3><p>Zwart voor maximaal contrast en batterij, met kleuren uit het NS design system.</p><div class="ps-colors"><span><i style="background:#000000"></i>Zwart #000000</span><span><i style="background:#FFC917"></i>NS-geel #FFC917</span><span><i style="background:#DB0029"></i>Rood #DB0029</span><span><i style="background:#0063D3"></i>Blauw #0063D3</span><span><i style="background:#009A42"></i>Groen #009A42</span></div></div>
+        <div class="kans-card"><h3>1. Eerst voelen, dan lezen</h3><p>Elke wijziging begint met een trilling. Reageert de reiziger niet, dan wordt de trilling sterker.</p></div>
+        <div class="kans-card"><h3>2. Kleur laat zien wat er aan de hand is</h3><p><span class="ps-sw" style="background:#FFC917"></span>Een gele rand betekent: alles is in orde. <span class="ps-sw" style="background:#DB0029"></span>Een rode rand betekent: let op, er is iets veranderd. Zo snap je het zonder te lezen.</p></div>
+        <div class="kans-card"><h3>3. Kort beginnen</h3><p>Bij de eerste blik zie je alleen “⚠ Spoor wijziging”. Blijf je kijken, dan verschijnt het nieuwe spoor in grote cijfers.</p></div>
+        <div class="kans-card"><h3>4. Zwart scherm met NS-kleuren</h3><p>Een zwarte achtergrond geeft het beste contrast en spaart de batterij. De kleuren komen uit het NS design system.</p><div class="ps-colors"><span><i style="background:#000000"></i>Zwart</span><span><i style="background:#FFC917"></i>NS-geel</span><span><i style="background:#DB0029"></i>Rood</span><span><i style="background:#0063D3"></i>Blauw</span><span><i style="background:#009A42"></i>Groen</span></div></div>
       </div>
     </section>
 
-    <!-- SKETCHES -->
+    <!-- SCHETSEN -->
     <section class="ts-section">
-      <span class="eyebrow">Ontwerpstudies</span>
-      <h2>Eerst breed schetsen, dan kiezen</h2>
-      <p>Voor elke kerninteractie bedacht en schetste ik eerst vier richtingen op papier. Elke richting woog ik af met interactietheorie, voordat ik één keuze uitwerkte in Figma.</p>
-      <div class="ps-sketches"><figure class="ps-sketch"><img src="./IMG/polssignaal/schets-k1.jpg" alt="K1 · Reis koppelen" loading="lazy"><figcaption><strong>K1 · Reis koppelen</strong><p class="ps-q">Hoe weet de watch welke trein hij moet volgen?</p><ol class="ps-alts"><li class="on"><b>Automatisch via de NS-app</b><span>geen extra handeling op het perron</span></li><li class=""><b>QR-code scannen</b><span>extra stap onder tijdsdruk</span></li><li class=""><b>NFC-tik, telefoon tegen watch</b><span>beide apparaten moeten NFC hebben</span></li><li class=""><b>4-cijferige code</b><span>een code onthouden onder stress is lastig</span></li></ol><p class="ps-choice">Gekozen: automatisch. Eén tap op “Akkoord” bevestigt de reis.</p><p class="ps-th">Theorie: Inside & Beyond Mobile · Action, Memory & Flow · Tangible Interactions</p></figcaption></figure><figure class="ps-sketch"><img src="./IMG/polssignaal/schets-k2.jpg" alt="K2 · Wijziging signaleren" loading="lazy"><figcaption><strong>K2 · Wijziging signaleren</strong><p class="ps-q">Hoe merkt iemand die niet hoort dat het spoor verandert?</p><ol class="ps-alts"><li class=""><b>Escalerende trilling</b><span>kost een extra stap om de info te zien</span></li><li class="on"><b>Rode flits op het scherm</b><span>werkt alleen als je al kijkt</span></li><li class=""><b>Omroep via het hoortoestel naar tekst</b><span>bereikt volledig dove reizigers niet</span></li><li class="on"><b>Direct actiescherm + escalerende trilling</b><span>de info staat er zodra je kijkt</span></li></ol><p class="ps-choice">Gekozen: rode flits én direct actiescherm met escalerende trilling. Samen heffen ze elkaars zwakte op: de trilling laat je kijken, het rood vertelt dat het dringend is.</p><p class="ps-th">Theorie: Affordances & Signifiers · Spatial & Transitional Interfaces · Micro-interacties</p></figcaption></figure><figure class="ps-sketch"><img src="./IMG/polssignaal/schets-k3.jpg" alt="K3 · Actie bevestigen" loading="lazy"><figcaption><strong>K3 · Actie bevestigen</strong><p class="ps-q">Hoe laat de reiziger zien dat hij het begrepen heeft?</p><ol class="ps-alts"><li class=""><b>Handpalm op het scherm</b><span>geen zichtbare aanwijzing dat dit kan</span></li><li class=""><b>Automatisch bij het juiste spoor</b><span>NS kent je locatie op het perron niet</span></li><li class=""><b>Verdwijnt na 8 seconden</b><span>kijk je even weg, dan mis je het</span></li><li class=""><b>Details op de telefoon</b><span>extra stap; blijft als aanvulling</span></li></ol><p class="ps-choice">Gekozen: swipe omhoog, met een bewegende pijl. Pas na een bewuste actie weet het systeem dat de reiziger het begrepen heeft.</p><p class="ps-th">Theorie: Action, Memory & Flow · Saffer: micro-interacties · watchOS-patronen</p></figcaption></figure></div>
+      <span class="eyebrow">Schetsen</span>
+      <h2>Vier ideeën per stap, één keuze</h2>
+      <p>De app heeft drie belangrijke momenten. Voor elk moment schetste ik eerst vier ideeën op papier. Ik keek bij elk idee wat goed en minder goed werkt, en koos daarna het beste idee om uit te werken.</p>
+      <div class="ps-sketches">
+        <figure class="ps-sketch"><img src="./IMG/polssignaal/schets-k1.jpg" alt="Schetsen voor stap 1: reis koppelen" loading="lazy"><figcaption><strong>Stap 1 · Reis koppelen</strong><p class="ps-q">Hoe weet de watch welke trein hij moet volgen?</p><ol class="ps-alts"><li class="on"><b>Automatisch via de NS-app</b><span>de reiziger hoeft op het perron niets te doen</span></li><li><b>QR-code scannen</b><span>een extra stap als je haast hebt</span></li><li><b>Telefoon tegen de watch houden (NFC)</b><span>werkt alleen als beide apparaten NFC hebben</span></li><li><b>Code van 4 cijfers invoeren</b><span>lastig om te onthouden als je gestrest bent</span></li></ol><p class="ps-choice">Keuze: automatisch. De reiziger tikt één keer op “Akkoord” om de reis te bevestigen.</p><p class="ps-th">Theorie: Inside &amp; Beyond Mobile · Action, Memory &amp; Flow · Tangible Interactions</p></figcaption></figure>
+        <figure class="ps-sketch"><img src="./IMG/polssignaal/schets-k2.jpg" alt="Schetsen voor stap 2: wijziging melden" loading="lazy"><figcaption><strong>Stap 2 · Wijziging melden</strong><p class="ps-q">Hoe merkt iemand die niet hoort dat het spoor verandert?</p><ol class="ps-alts"><li><b>Trilling die steeds sterker wordt</b><span>je moet daarna nog een stap doen om de info te zien</span></li><li class="on"><b>Rode flits op het scherm</b><span>werkt alleen als je al op je watch kijkt</span></li><li><b>Omroep via het hoortoestel omzetten naar tekst</b><span>helpt reizigers die helemaal doof zijn niet</span></li><li class="on"><b>Direct het nieuwe spoor tonen + sterker wordende trilling</b><span>de info staat er meteen als je kijkt</span></li></ol><p class="ps-choice">Keuze: idee 2 en 4 samen. De trilling zorgt dat je kijkt, de rode kleur laat zien dat het dringend is.</p><p class="ps-th">Theorie: Affordances &amp; Signifiers · Spatial &amp; Transitional Interfaces · Micro-interacties</p></figcaption></figure>
+        <figure class="ps-sketch"><img src="./IMG/polssignaal/schets-k3.jpg" alt="Schetsen voor stap 3: wijziging bevestigen" loading="lazy"><figcaption><strong>Stap 3 · Wijziging bevestigen</strong><p class="ps-q">Hoe laat de reiziger weten dat hij het bericht heeft gezien?</p><ol class="ps-alts"><li><b>Hand op het scherm leggen</b><span>niemand ziet dat dit kan</span></li><li><b>Vanzelf als je op het goede spoor staat</b><span>NS weet niet waar je op het perron staat</span></li><li><b>Melding verdwijnt na 8 seconden</b><span>kijk je even weg, dan mis je hem</span></li><li><b>Details bekijken op de telefoon</b><span>een extra stap, maar handig als aanvulling</span></li></ol><p class="ps-choice">Keuze: omhoog swipen, met een bewegende pijl als hint. Pas als de reiziger zelf iets doet, weet de app zeker dat het bericht is gezien.</p><p class="ps-th">Theorie: Action, Memory &amp; Flow · Saffer: micro-interacties · watchOS-richtlijnen</p></figcaption></figure>
+      </div>
     </section>
 
-    <!-- PHONE + WATCH -->
+    <!-- STAP 1 -->
     <section class="ts-section">
-      <span class="eyebrow">Telefoon + watch</span>
+      <span class="eyebrow">Het ontwerp · Stap 1</span>
       <h2>De telefoon plant, de watch waarschuwt</h2>
-      <p>De watch pikt de reis automatisch op uit de NS-app, zodat de reiziger op het station niets extra hoeft te doen. Eén tap op “Akkoord” bevestigt welke reis gevolgd wordt.</p>
+      <p>De reiziger plant zijn reis zoals altijd in de NS-app. De watch neemt de reis daarna vanzelf over. Op het station hoeft de reiziger dus niets extra te doen.</p>
       <div class="ps-canvas">
         <p class="ps-label">Telefoon · NS-app</p>
         <div class="ps-row"><figure class="p"><img src="./IMG/polssignaal/figma/k1-phone-1.png" alt="Reis plannen" loading="lazy"><figcaption>Reis plannen</figcaption></figure><span class="to">→</span><figure class="p"><img src="./IMG/polssignaal/figma/k1-phone-4.png" alt="Meldingen aanzetten" loading="lazy"><figcaption>Meldingen aanzetten</figcaption></figure><span class="to">→</span><figure class="p"><img src="./IMG/polssignaal/figma/k1-phone-5.png" alt="Opgeslagen" loading="lazy"><figcaption>Opgeslagen</figcaption></figure></div>
@@ -176,56 +203,67 @@
       </div>
     </section>
 
-    <!-- CORE FLOW -->
+    <!-- STAP 2 + 3 -->
     <section class="ts-section">
-      <span class="eyebrow">De kernflow</span>
-      <h2>Fatima op perron 4</h2>
-      <p>Fatima is doof. Ze wacht op de intercity van 07:56 en kijkt op haar telefoon, niet naar de borden.</p>
-      <ol class="ps-time"><li><b>07:52:00</b>Het spoor wijzigt naar 7. Ze voelt een trilling en ziet de rode rand.</li><li><b>07:52:02</b>Short look: “⚠ Spoor wijziging”.</li><li><b>07:52:04</b>Long look: “Spoor 7” met een bewegende pijl. Ze swipet.</li><li><b>07:52:05</b>Bevestigd. Fatima haalt haar trein.</li></ol>
+      <span class="eyebrow">Het ontwerp · Stap 2 &amp; 3</span>
+      <h2>Fatima haalt haar trein</h2>
+      <p>Fatima is doof. Ze wacht op perron 4 op de intercity van 07:56. Ze kijkt op haar telefoon, niet naar de borden. Dan verandert het spoor.</p>
+      <ol class="ps-time"><li><b>0 sec</b>Het spoor verandert naar 7. Fatima voelt een trilling en ziet een rode rand.</li><li><b>2 sec</b>Ze kijkt op haar watch en leest: “⚠ Spoor wijziging”.</li><li><b>4 sec</b>Ze blijft kijken. Nu staat er groot “Spoor 7”, met een bewegende pijl. Ze swipet omhoog.</li><li><b>5 sec</b>De wijziging is bevestigd. Fatima loopt naar spoor 7 en haalt haar trein.</li></ol>
       <div class="ps-canvas">
-        <div class="ps-row"><figure class="w"><img src="./IMG/polssignaal/figma/k3-1.png" alt="Status: nog 6 min" loading="lazy"><figcaption>Status: nog 6 min</figcaption></figure><span class="to">→</span><figure class="w"><img src="./IMG/polssignaal/figma/k3-2.png" alt="Trilling + short look" loading="lazy"><figcaption>Trilling + short look</figcaption></figure><span class="to">→</span><figure class="w"><img src="./IMG/polssignaal/figma/k3-3.png" alt="Long look: Spoor 7" loading="lazy"><figcaption>Long look: Spoor 7</figcaption></figure></div>
+        <div class="ps-row"><figure class="w"><img src="./IMG/polssignaal/figma/k3-1.png" alt="Status: nog 6 minuten" loading="lazy"><figcaption>Status: nog 6 min</figcaption></figure><span class="to">→</span><figure class="w"><img src="./IMG/polssignaal/figma/k3-2.png" alt="Trilling en eerste melding" loading="lazy"><figcaption>Trilling + eerste melding</figcaption></figure><span class="to">→</span><figure class="w"><img src="./IMG/polssignaal/figma/k3-3.png" alt="Nieuw spoor: 7" loading="lazy"><figcaption>Nieuw spoor: 7</figcaption></figure></div>
         <div class="ps-down">↓</div>
-        <div class="ps-row"><figure class="w"><img src="./IMG/polssignaal/figma/k3-4.png" alt="Bevestigd" loading="lazy"><figcaption>Bevestigd</figcaption></figure><span class="to">→</span><figure class="w"><img src="./IMG/polssignaal/figma/k3-5.png" alt="Spoor 4 → 7" loading="lazy"><figcaption>Spoor 4 → 7</figcaption></figure><span class="to">→</span><figure class="w"><img src="./IMG/polssignaal/figma/k3-6.png" alt="Krap: afteltijd rood" loading="lazy"><figcaption>Krap: afteltijd rood</figcaption></figure></div>
+        <div class="ps-row"><figure class="w"><img src="./IMG/polssignaal/figma/k3-4.png" alt="Bevestigd" loading="lazy"><figcaption>Bevestigd</figcaption></figure><span class="to">→</span><figure class="w"><img src="./IMG/polssignaal/figma/k3-5.png" alt="Spoor 4 naar 7" loading="lazy"><figcaption>Spoor 4 → 7</figcaption></figure><span class="to">→</span><figure class="w"><img src="./IMG/polssignaal/figma/k3-6.png" alt="Weinig tijd: aftellen in rood" loading="lazy"><figcaption>Weinig tijd: aftellen in rood</figcaption></figure></div>
       </div>
 
-      <h3>Wat als ze niet reageert?</h3>
-      <p>Er is geen omroep als vangnet. Daarom wordt de trilling elke 5 seconden sterker, tot de wijziging bevestigd is.</p>
+      <h3>En als ze niet reageert?</h3>
+      <p>Er is geen omroep als back-up. Daarom wordt de trilling elke 5 seconden sterker, tot de reiziger de wijziging bevestigt.</p>
       <table class="result-table">
-        <thead><tr><th>Moment</th><th>Visueel</th><th>Haptiek (watchOS)</th></tr></thead>
-        <tbody><tr><td data-label="Moment"><span class="ps-phase" style="background:#DB0029;opacity:.5"></span>Fase 1 · wijziging</td><td data-label="Visueel">Rode rand flitst</td><td data-label="Haptiek (watchOS)">Medium, elke 0,75 s</td></tr><tr><td data-label="Moment"><span class="ps-phase" style="background:#DB0029;opacity:.75"></span>Fase 2 · geen reactie</td><td data-label="Visueel">Rode rand pulseert</td><td data-label="Haptiek (watchOS)">Heavy, elke 0,5 s</td></tr><tr><td data-label="Moment"><span class="ps-phase" style="background:#DB0029"></span>Fase 3 · nog steeds niets</td><td data-label="Visueel">Rode rand knippert snel</td><td data-label="Haptiek (watchOS)">Failure, elke 0,25 s</td></tr><tr><td data-label="Moment"><span class="ps-phase" style="background:#009A42"></span>Bevestigd</td><td data-label="Visueel">Groen vinkje</td><td data-label="Haptiek (watchOS)">Success</td></tr></tbody>
+        <thead><tr><th>Moment</th><th>Wat je ziet</th><th>Wat je voelt</th></tr></thead>
+        <tbody><tr><td data-label="Moment"><span class="ps-phase" style="background:#DB0029;opacity:.5"></span>Wijziging</td><td data-label="Wat je ziet">Rode rand flitst</td><td data-label="Wat je voelt">Normale trilling, elke 0,75 sec</td></tr><tr><td data-label="Moment"><span class="ps-phase" style="background:#DB0029;opacity:.75"></span>Na 5 sec geen reactie</td><td data-label="Wat je ziet">Rode rand pulseert</td><td data-label="Wat je voelt">Sterke trilling, elke 0,5 sec</td></tr><tr><td data-label="Moment"><span class="ps-phase" style="background:#DB0029"></span>Na 10 sec nog steeds niets</td><td data-label="Wat je ziet">Rode rand knippert snel</td><td data-label="Wat je voelt">Sterkste trilling, elke 0,25 sec</td></tr><tr><td data-label="Moment"><span class="ps-phase" style="background:#009A42"></span>Bevestigd</td><td data-label="Wat je ziet">Groen vinkje</td><td data-label="Wat je voelt">Korte trilling als bevestiging</td></tr></tbody>
       </table>
 
-      <div class="ts-callout">Waarom swipen en geen knop? Een swipe beslaat het hele scherm, dus minder mis-taps onder tijdsdruk. Het is het standaard watchOS-gebaar, en de bewegende pijl maakt het zichtbaar.</div>
-
+      <div class="ts-callout"><strong>Waarom swipen en geen knop?</strong><br><br>Een swipe kan over het hele scherm. Zo tik je minder snel mis als je haast hebt. Swipen is ook een bekend gebaar op de Apple Watch, en de bewegende pijl laat zien wat je moet doen.</div>
     </section>
 
-    <!-- STATES -->
+    <!-- ANDERE SITUATIES -->
     <section class="ts-section">
-      <span class="eyebrow">States</span>
-      <h2>Elke situatie een eigen scherm</h2>
-      <p>Bij uitval of een gemiste overstap stuurt de watch je door naar de telefoon, waar ruimte is voor alternatieven. Een fout trilt bewust zachter, zodat je voelt dat het geen spoorwijziging is.</p>
+      <span class="eyebrow">Andere situaties</span>
+      <h2>Wat als er iets anders gebeurt?</h2>
+      <p>Niet elke wijziging is een nieuw spoor. Valt de trein uit of haal je je overstap niet, dan stuurt de watch je naar de telefoon. Daar is meer ruimte om andere reisopties te laten zien. Gaat er iets technisch mis, dan trilt de watch zachter. Zo voel je meteen dat het geen spoorwijziging is.</p>
       <div class="ps-canvas">
         <p class="ps-label">Wijzigingen</p>
-        <div class="ps-row"><figure class="w"><img src="./IMG/polssignaal/figma/k2-vervalt-long.png" alt="Trein vervalt" loading="lazy"><figcaption>Trein vervalt</figcaption></figure><span class="gap"></span><figure class="w"><img src="./IMG/polssignaal/figma/k2-overstap.png" alt="Overstap niet haalbaar" loading="lazy"><figcaption>Overstap niet haalbaar</figcaption></figure><span class="gap"></span><figure class="w"><img src="./IMG/polssignaal/figma/k2-handoff.png" alt="Verder op je telefoon" loading="lazy"><figcaption>Verder op je telefoon</figcaption></figure></div>
-        <p class="ps-label">Fouten</p>
+        <div class="ps-row"><figure class="w"><img src="./IMG/polssignaal/figma/k2-vervalt-long.png" alt="Trein valt uit" loading="lazy"><figcaption>Trein valt uit</figcaption></figure><span class="gap"></span><figure class="w"><img src="./IMG/polssignaal/figma/k2-overstap.png" alt="Overstap niet haalbaar" loading="lazy"><figcaption>Overstap niet haalbaar</figcaption></figure><span class="gap"></span><figure class="w"><img src="./IMG/polssignaal/figma/k2-handoff.png" alt="Verder op je telefoon" loading="lazy"><figcaption>Verder op je telefoon</figcaption></figure></div>
+        <p class="ps-label">Foutmeldingen</p>
         <div class="ps-row"><figure class="w"><img src="./IMG/polssignaal/figma/err-netwerk.png" alt="Geen verbinding" loading="lazy"><figcaption>Geen verbinding</figcaption></figure><span class="gap"></span><figure class="w"><img src="./IMG/polssignaal/figma/err-onbekend.png" alt="Er ging iets mis" loading="lazy"><figcaption>Er ging iets mis</figcaption></figure></div>
       </div>
     </section>
 
-    <!-- WATCHOS DETAILS -->
+    <!-- VISUEEL ONTWERP -->
     <section class="ts-section">
-      <span class="eyebrow">Details</span>
-      <h2>Ontworpen volgens watchOS</h2>
+      <span class="eyebrow">Visueel ontwerp</span>
+      <h2>Leesbaar in twee seconden</h2>
+      <p>Op een watch kijk je maar heel kort. Daarom volgde ik de richtlijnen van Apple voor de Apple Watch en maakte ik alles zo groot en simpel mogelijk.</p>
       <div class="ps-detail">
-        <div class="ps-type"><h3>Typografie · SF Compact</h3><div><span class="t32">Spoor 7</span><small>32 pt · Bold</small></div><div><span class="t24">Spoor wijziging</span><small>24 pt · Bold</small></div><div><span class="t18">Amersfoort → Arnhem</span><small>18 pt · Regular</small></div><div><span class="t16">Akkoord</span><small>16 pt · Medium</small></div><div><span class="t15">swipe om te bevestigen</span><small>15 pt · Light</small></div></div>
-        <div class="kans-card"><h3>Gemaakt voor 2 seconden kijken</h3><ul><li>Het spoornummer is het grootst: dat is het enige wat de reiziger écht nodig heeft.</li><li>Touch targets van minimaal 44 pt. De Akkoord-knop loopt over de hele breedte.</li><li>Maximaal twee acties per scherm.</li><li>Reis en Status zijn twee tabbladen, zodat elk scherm één vraag beantwoordt: “waar ga ik heen?” of “wat is er nu aan de hand?”. Zo staat een wijziging (4 → 7) groot in beeld, zonder de route eromheen.</li><li>Canvas van 198 × 242 pt (Apple Watch 45 mm).</li></ul></div>
-      </div>
-      <div class="ps-buttons">
-        <a href="https://www.figma.com/design/JLcyJkmm0FiTeYnnLhfiVK/PolsSignaal-ns-app?node-id=0-1" class="btn btn-solid" target="_blank" rel="noopener">Bekijk het Figma-bestand →</a>
+        <div class="ps-type"><h3>Lettertype · SF Compact</h3><div><span class="t32">Spoor 7</span><small>32 pt · Bold</small></div><div><span class="t24">Spoor wijziging</span><small>24 pt · Bold</small></div><div><span class="t18">Amersfoort → Arnhem</span><small>18 pt · Regular</small></div><div><span class="t16">Akkoord</span><small>16 pt · Medium</small></div><div><span class="t15">swipe om te bevestigen</span><small>15 pt · Light</small></div></div>
+        <div class="kans-card"><h3>Mijn keuzes</h3><ul><li>Het spoornummer is het grootst. Dat is het enige wat de reiziger op dat moment echt nodig heeft.</li><li>Knoppen zijn minimaal 44 pt groot. De knop “Akkoord” is zo breed als het scherm.</li><li>Maximaal twee acties per scherm.</li><li>Twee tabbladen: <strong>Reis</strong> (waar ga ik heen?) en <strong>Status</strong> (wat gebeurt er nu?). Zo staat een wijziging groot in beeld, zonder extra informatie eromheen.</li><li>Ontworpen voor de Apple Watch van 45 mm (198 × 242 pt).</li></ul></div>
       </div>
     </section>
 
-    <!-- NEXT PROJECT -->
+    <!-- RESULTAAT -->
+    <section class="ts-section">
+      <span class="eyebrow">Resultaat</span>
+      <h2>Wat heeft het opgeleverd?</h2>
+      <p>PolsSignaal is een klikbaar prototype van een watch-app die aansluit op de bestaande NS-app. Een dove of slechthorende reiziger hoeft niets extra te doen, en mist toch geen spoorwijziging meer.</p>
+      <div class="ps-result">
+        <div class="kans-card"><h3>Wat het ontwerp doet</h3><ul><li>Waarschuwt met trilling en kleur, zonder geluid.</li><li>Toont alleen wat je op dat moment nodig hebt.</li><li>Blijft waarschuwen tot de reiziger reageert.</li><li>Past bij de huisstijl en de app van NS.</li></ul></div>
+        <div class="kans-card"><h3>Wat ik heb geleerd</h3><ul><li>Op een klein scherm moet je goed kiezen wat je weglaat.</li><li>Door eerst veel ideeën te schetsen, kwam ik op een betere oplossing dan mijn eerste idee.</li><li>Een volgende stap is het prototype testen met dove en slechthorende reizigers op een echt station.</li></ul></div>
+      </div>
+      <div class="ps-buttons">
+        <a href="https://www.figma.com/design/JLcyJkmm0FiTeYnnLhfiVK/PolsSignaal-ns-app?node-id=0-1" class="btn btn-solid" target="_blank" rel="noopener">Bekijk het ontwerp in Figma →</a>
+      </div>
+    </section>
+
+    <!-- VOLGEND PROJECT -->
     <section class="next-project-section">
       <a href="VGZ.html" class="next-project">Volgend project →</a>
     </section>
