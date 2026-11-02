@@ -16,6 +16,14 @@
     /* PolsSignaal — page-only styles */
     .ps-two{ display:grid; grid-template-columns:repeat(3,1fr); gap:1.4rem; }
     .ts-hero{ background-position:right center; }
+    .ps-src{ margin-top:.8rem !important; font-size:.85rem; }
+    .ps-src a{ color:var(--terracotta); font-weight:600; }
+    .ps-sketches{ display:grid; grid-template-columns:1fr; gap:1.4rem; }
+    .ps-sketch{ display:grid; grid-template-columns:1.2fr 1fr; gap:1.6rem; align-items:center; background:var(--white); border-radius:18px; padding:1.2rem; box-shadow:0 8px 26px rgba(14,31,38,.05); }
+    .ps-sketch img{ border-radius:12px; box-shadow:none !important; }
+    .ps-sketch figcaption{ font-size:.97rem; color:#3d474c; line-height:1.6; margin:0; }
+    .ps-sketch figcaption strong{ font-family:'Fraunces',serif; color:var(--terracotta); font-size:1.15rem; }
+    @media (max-width:800px){ .ps-sketch{ grid-template-columns:1fr; } }
     @media (max-width:700px){ .ts-hero{ background-color:#f7f5e5; background-size:150% auto; background-position:right top; background-repeat:no-repeat; padding-top:330px; } }
     .ps-two .onderzoek-card p{ font-size:.97rem; color:#3d474c; margin:.6rem 0 0; }
 
@@ -121,8 +129,8 @@
       <h2>Hoe krijg je de omroep mee als je hem niet hoort?</h2>
       <div class="ps-two">
         <div class="onderzoek-card"><span class="eyebrow">01 · Het NS-systeem</span><h3>Waar sluit de watch op aan?</h3><p>Ik bestudeerde de reisplanner, de meldingen in de NS-app, NS InfoPlus en het NS design system.</p></div>
-        <div class="onderzoek-card"><span class="eyebrow">02 · Signalen zonder geluid</span><h3>Voelen en zien</h3><p>Dove en slechthorende mensen krijgen meldingen via trillingen en visuele signalen. Een trilling voel je ook als het scherm uit staat.</p></div>
-        <div class="onderzoek-card"><span class="eyebrow">03 · Bestaande ontwerpen</span><h3>Hoe waarschuw je iemand die niet hoort?</h3><p>Ik bekeek ontwerpen die al voor doven en slechthorenden gemaakt zijn, en hoe je iemand waarschuwt zonder geluid.</p></div>
+        <div class="onderzoek-card"><span class="eyebrow">02 · Dove reizigers op het station</span><h3>Wat gaat er mis?</h3><p>Updates komen vaak alleen via de omroep. Dove reizigers missen daardoor spoorwijzigingen en volgen dan de menigte, die hen vaak naar de verkeerde plek brengt.</p><p class="ps-src"><a href="https://qut.edu.au/news/realfocus/for-deaf-people-train-travel-can-be-a-gamble.-but-an-ai-powered-auslan-avatar-can-help" target="_blank" rel="noopener">Bron ↗</a></p></div>
+        <div class="onderzoek-card"><span class="eyebrow">03 · Waarschuwen zonder geluid</span><h3>Hoe doen bestaande ontwerpen het?</h3><p>Een trilwekker, flitsende deurbel of rookmelder voor doven combineert licht en trilling. De trilling voel je ook als je niet kijkt, het licht zie je ook als je de trilling mist.</p><p class="ps-src"><a href="https://us.bellman.com/blogs/news/how-do-deaf-alert-systems-work" target="_blank" rel="noopener">Bron ↗</a></p></div>
       </div>
       <div class="ts-callout">Waarom een smartwatch? Hij zit altijd op de pols en bereikt de reiziger zonder geluid en zonder dat die hoeft te zoeken.</div>
     </section>
@@ -137,6 +145,14 @@
         <div class="kans-card"><h3>Eerst twee woorden</h3><p>Eerst alleen “⚠ Spoor wijziging”. Blijft de reiziger kijken, dan verschijnt het nieuwe spoor (watchOS: short look → long look).</p></div>
         <div class="kans-card"><h3>Zwart met NS-kleuren</h3><p>Zwart voor maximaal contrast en batterij, met kleuren uit het NS design system.</p><div class="ps-colors"><span><i style="background:#000000"></i>Zwart #000000</span><span><i style="background:#FFC917"></i>NS-geel #FFC917</span><span><i style="background:#DB0029"></i>Rood #DB0029</span><span><i style="background:#0063D3"></i>Blauw #0063D3</span><span><i style="background:#009A42"></i>Groen #009A42</span></div></div>
       </div>
+    </section>
+
+    <!-- SKETCHES -->
+    <section class="ts-section">
+      <span class="eyebrow">Ontwerpstudies</span>
+      <h2>Eerst breed schetsen, dan kiezen</h2>
+      <p>Voor elke kerninteractie schetste ik vier richtingen op papier, voordat ik iets in Figma ontwierp.</p>
+      <div class="ps-sketches"><figure class="ps-sketch"><img src="./IMG/polssignaal/schets-k1.jpg" alt="K1 · Reis koppelen" loading="lazy"><figcaption><strong>K1 · Reis koppelen</strong><br>Automatisch via de NS-app, QR-code, cijfercode of NFC-tik. Gekozen: automatisch, want op het perron mag koppelen geen extra handeling kosten.</figcaption></figure><figure class="ps-sketch"><img src="./IMG/polssignaal/schets-k2.jpg" alt="K2 · Wijziging signaleren" loading="lazy"><figcaption><strong>K2 · Wijziging signaleren</strong><br>Trilpatroon per melding, rode flits, omroep als tekst, escalerende trilling of koppeling met het hoortoestel. Gekozen: rode flits plus escalerende trilling, want samen bereiken ze iedereen, ook wie niet kijkt.</figcaption></figure><figure class="ps-sketch"><img src="./IMG/polssignaal/schets-k3.jpg" alt="K3 · Actie bevestigen" loading="lazy"><figcaption><strong>K3 · Actie bevestigen</strong><br>Handpalm op het scherm, automatisch bij het juiste spoor, verdwijnen na 8 seconden of details op de telefoon. Gekozen: swipe omhoog, want alleen een bewuste actie bewijst dat de reiziger het begrepen heeft.</figcaption></figure></div>
     </section>
 
     <!-- PHONE + WATCH -->
@@ -194,11 +210,10 @@
       <h2>Ontworpen volgens watchOS</h2>
       <div class="ps-detail">
         <div class="ps-type"><h3>Typografie · SF Compact</h3><div><span class="t32">Spoor 7</span><small>32 pt · Bold</small></div><div><span class="t24">Spoor wijziging</span><small>24 pt · Bold</small></div><div><span class="t18">Amersfoort → Arnhem</span><small>18 pt · Regular</small></div><div><span class="t16">Akkoord</span><small>16 pt · Medium</small></div><div><span class="t15">swipe om te bevestigen</span><small>15 pt · Light</small></div></div>
-        <div class="kans-card"><h3>Gemaakt voor 2 seconden kijken</h3><ul><li>Het spoornummer is het grootst: dat is het enige wat de reiziger écht nodig heeft.</li><li>Touch targets van minimaal 44 pt. De Akkoord-knop loopt over de hele breedte.</li><li>Maximaal twee acties per scherm.</li><li>Canvas van 198 × 242 pt (Apple Watch 45 mm).</li></ul></div>
+        <div class="kans-card"><h3>Gemaakt voor 2 seconden kijken</h3><ul><li>Het spoornummer is het grootst: dat is het enige wat de reiziger écht nodig heeft.</li><li>Touch targets van minimaal 44 pt. De Akkoord-knop loopt over de hele breedte.</li><li>Maximaal twee acties per scherm.</li><li>Reis en Status zijn twee tabbladen, zodat elk scherm één vraag beantwoordt: “waar ga ik heen?” of “wat is er nu aan de hand?”. Zo staat een wijziging (4 → 7) groot in beeld, zonder de route eromheen.</li><li>Canvas van 198 × 242 pt (Apple Watch 45 mm).</li></ul></div>
       </div>
       <div class="ps-buttons">
-        <a href="https://cloud.protopie.io/p/d0dc5fe4a6ac103e08de3d23" class="btn btn-solid" target="_blank" rel="noopener">Probeer het ProtoPie-prototype →</a>
-        <a href="https://www.figma.com/design/JLcyJkmm0FiTeYnnLhfiVK/PolsSignaal-ns-app?node-id=0-1" class="btn" target="_blank" rel="noopener">Bekijk het Figma-bestand →</a>
+        <a href="https://www.figma.com/design/JLcyJkmm0FiTeYnnLhfiVK/PolsSignaal-ns-app?node-id=0-1" class="btn btn-solid" target="_blank" rel="noopener">Bekijk het Figma-bestand →</a>
       </div>
     </section>
 

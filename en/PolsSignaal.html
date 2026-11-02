@@ -16,6 +16,14 @@
     /* PolsSignaal — page-only styles */
     .ps-two{ display:grid; grid-template-columns:repeat(3,1fr); gap:1.4rem; }
     .ts-hero{ background-position:right center; }
+    .ps-src{ margin-top:.8rem !important; font-size:.85rem; }
+    .ps-src a{ color:var(--terracotta); font-weight:600; }
+    .ps-sketches{ display:grid; grid-template-columns:1fr; gap:1.4rem; }
+    .ps-sketch{ display:grid; grid-template-columns:1.2fr 1fr; gap:1.6rem; align-items:center; background:var(--white); border-radius:18px; padding:1.2rem; box-shadow:0 8px 26px rgba(14,31,38,.05); }
+    .ps-sketch img{ border-radius:12px; box-shadow:none !important; }
+    .ps-sketch figcaption{ font-size:.97rem; color:#3d474c; line-height:1.6; margin:0; }
+    .ps-sketch figcaption strong{ font-family:'Fraunces',serif; color:var(--terracotta); font-size:1.15rem; }
+    @media (max-width:800px){ .ps-sketch{ grid-template-columns:1fr; } }
     @media (max-width:700px){ .ts-hero{ background-color:#f7f5e5; background-size:150% auto; background-position:right top; background-repeat:no-repeat; padding-top:330px; } }
     .ps-two .onderzoek-card p{ font-size:.97rem; color:#3d474c; margin:.6rem 0 0; }
 
@@ -121,8 +129,8 @@
       <h2>How do you catch an announcement you can’t hear?</h2>
       <div class="ps-two">
         <div class="onderzoek-card"><span class="eyebrow">01 · The NS system</span><h3>What can the watch build on?</h3><p>I studied the journey planner, the notifications in the NS app, NS InfoPlus and the NS design system.</p></div>
-        <div class="onderzoek-card"><span class="eyebrow">02 · Signals without sound</span><h3>Feel and see</h3><p>Deaf and hard-of-hearing people receive notifications through vibrations and visual signals. You feel a vibration even when the screen is off.</p></div>
-        <div class="onderzoek-card"><span class="eyebrow">03 · Existing designs</span><h3>How do you alert someone who can’t hear?</h3><p>I looked at existing designs made for deaf and hard-of-hearing people, and at how to alert someone without sound.</p></div>
+        <div class="onderzoek-card"><span class="eyebrow">02 · Deaf travellers at the station</span><h3>What goes wrong?</h3><p>Updates often come only through announcements. Deaf travellers miss platform changes and end up following the crowd, which often takes them to the wrong place.</p><p class="ps-src"><a href="https://qut.edu.au/news/realfocus/for-deaf-people-train-travel-can-be-a-gamble.-but-an-ai-powered-auslan-avatar-can-help" target="_blank" rel="noopener">Source ↗</a></p></div>
+        <div class="onderzoek-card"><span class="eyebrow">03 · Alerting without sound</span><h3>How do existing designs do it?</h3><p>Alarm clocks, doorbells and smoke alarms for deaf people combine light and vibration. You feel the vibration even when you’re not looking, and you see the light even if you miss the vibration.</p><p class="ps-src"><a href="https://us.bellman.com/blogs/news/how-do-deaf-alert-systems-work" target="_blank" rel="noopener">Source ↗</a></p></div>
       </div>
       <div class="ts-callout">Why a smartwatch? It is always on the wrist, and it reaches the traveller without sound and without them having to look for anything.</div>
     </section>
@@ -137,6 +145,14 @@
         <div class="kans-card"><h3>Two words first</h3><p>First only “⚠ Track change”. If the traveller keeps looking, the new track appears (watchOS: short look → long look).</p></div>
         <div class="kans-card"><h3>Black with NS colours</h3><p>Black for maximum contrast and battery life, with colours from the NS design system.</p><div class="ps-colors"><span><i style="background:#000000"></i>Black #000000</span><span><i style="background:#FFC917"></i>NS yellow #FFC917</span><span><i style="background:#DB0029"></i>Red #DB0029</span><span><i style="background:#0063D3"></i>Blue #0063D3</span><span><i style="background:#009A42"></i>Green #009A42</span></div></div>
       </div>
+    </section>
+
+    <!-- SKETCHES -->
+    <section class="ts-section">
+      <span class="eyebrow">Design studies</span>
+      <h2>Sketch wide first, then choose</h2>
+      <p>For each core interaction I sketched four directions on paper before designing anything in Figma.</p>
+      <div class="ps-sketches"><figure class="ps-sketch"><img src="../IMG/polssignaal/schets-k1.jpg" alt="K1 · Link a journey" loading="lazy"><figcaption><strong>K1 · Link a journey</strong><br>Automatically via the NS app, a QR code, a pairing code or an NFC tap. Chosen: automatic, because linking shouldn’t cost an extra action on the platform.</figcaption></figure><figure class="ps-sketch"><img src="../IMG/polssignaal/schets-k2.jpg" alt="K2 · Signal a change" loading="lazy"><figcaption><strong>K2 · Signal a change</strong><br>A vibration pattern per alert, a red flash, the announcement as text, an escalating vibration or a hearing-aid connection. Chosen: red flash plus escalating vibration, because together they reach everyone, even someone who isn’t looking.</figcaption></figure><figure class="ps-sketch"><img src="../IMG/polssignaal/schets-k3.jpg" alt="K3 · Confirm the action" loading="lazy"><figcaption><strong>K3 · Confirm the action</strong><br>Palm on the screen, automatic at the right platform, disappearing after 8 seconds, or details on the phone. Chosen: swipe up, because only a deliberate action proves the traveller understood.</figcaption></figure></div>
     </section>
 
     <!-- PHONE + WATCH -->
@@ -194,11 +210,10 @@
       <h2>Designed for watchOS</h2>
       <div class="ps-detail">
         <div class="ps-type"><h3>Typography · SF Compact</h3><div><span class="t32">Spoor 7</span><small>32 pt · Bold</small></div><div><span class="t24">Spoor wijziging</span><small>24 pt · Bold</small></div><div><span class="t18">Amersfoort → Arnhem</span><small>18 pt · Regular</small></div><div><span class="t16">Akkoord</span><small>16 pt · Medium</small></div><div><span class="t15">swipe om te bevestigen</span><small>15 pt · Light</small></div></div>
-        <div class="kans-card"><h3>Made for a 2-second glance</h3><ul><li>The track number is the largest: it is the only thing the traveller really needs.</li><li>Touch targets of at least 44 pt. The OK button spans the full width.</li><li>No more than two actions per screen.</li><li>198 × 242 pt canvas (Apple Watch 45 mm).</li></ul></div>
+        <div class="kans-card"><h3>Made for a 2-second glance</h3><ul><li>The track number is the largest: it is the only thing the traveller really needs.</li><li>Touch targets of at least 44 pt. The OK button spans the full width.</li><li>No more than two actions per screen.</li><li>Journey and Status are two tabs, so each screen answers one question: “where am I going?” or “what’s happening now?”. That way a change (4 → 7) fills the screen, without the route around it.</li><li>198 × 242 pt canvas (Apple Watch 45 mm).</li></ul></div>
       </div>
       <div class="ps-buttons">
-        <a href="https://cloud.protopie.io/p/d0dc5fe4a6ac103e08de3d23" class="btn btn-solid" target="_blank" rel="noopener">Try the ProtoPie prototype →</a>
-        <a href="https://www.figma.com/design/JLcyJkmm0FiTeYnnLhfiVK/PolsSignaal-ns-app?node-id=0-1" class="btn" target="_blank" rel="noopener">View the Figma file →</a>
+        <a href="https://www.figma.com/design/JLcyJkmm0FiTeYnnLhfiVK/PolsSignaal-ns-app?node-id=0-1" class="btn btn-solid" target="_blank" rel="noopener">View the Figma file →</a>
       </div>
     </section>
 
