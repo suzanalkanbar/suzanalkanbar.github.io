@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="nl">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PolsSignaal NS — Een omroep die je kunt voelen | Suzan Alkanbar</title>
+  <link rel="stylesheet" href="./CSS/style.css?v=9">
+  <link rel="alternate" hreflang="nl" href="https://suzanalkanbar.github.io/PolsSignaal.html">
+  <link rel="alternate" hreflang="en" href="https://suzanalkanbar.github.io/en/PolsSignaal.html">
+  <link rel="icon" href="./favicon.svg?v=1" type="image/svg+xml">
+  <link rel="icon" href="./favicon.png?v=1" type="image/png" sizes="48x48">
+  <link rel="apple-touch-icon" href="./favicon.png?v=1">
+  <meta name="theme-color" content="#B97C5E">
+  <style>
+    /* PolsSignaal — page-only styles */
+    .ps-hero{ display:block; min-height:0; padding:0; background:#000; }
+    .ps-hero::after{ display:none; }
+    .ps-hero-banner{ width:100%; background:#f7f5e5; }
+    .ps-hero-banner img{ width:100%; max-width:1400px; margin:0 auto; }
+    .ps-hero-band{ display:grid; grid-template-columns:1.1fr .9fr; gap:3rem; align-items:center;
+      max-width:1280px; margin:0 auto; padding:clamp(40px,6vw,80px) clamp(20px,4vw,56px); }
+    .ps-hero-band .ts-hero__inner h1{ font-size:clamp(2.2rem,5vw,4.2rem); }
+    .ps-hero-band img{ width:100%; max-width:520px; margin-left:auto; }
+
+    .ps-two{ display:grid; grid-template-columns:repeat(2,1fr); gap:1.4rem; }
+    .ps-two .onderzoek-card p{ font-size:.97rem; color:#3d474c; margin:.6rem 0 0; }
+
+    .ps-sw{ display:inline-block; width:14px; height:14px; border-radius:4px; vertical-align:-1px; margin-right:8px; }
+    .ps-colors{ display:flex; flex-wrap:wrap; gap:.5rem; margin-top:.9rem; }
+    .ps-colors span{ display:inline-flex; align-items:center; gap:.4rem; background:var(--cream); border-radius:999px; padding:.25rem .7rem .25rem .3rem; font-size:.78rem; font-weight:600; }
+    .ps-colors i{ width:16px; height:16px; border-radius:50%; display:inline-block; border:1px solid rgba(0,0,0,.12); }
+
+    .ps-canvas{ background:var(--white); border-radius:18px; box-shadow:0 8px 26px rgba(14,31,38,.05); padding:1.6rem 1.6rem 1.1rem; margin:1.6rem 0 2.2rem; overflow-x:auto; }
+    .ps-label{ color:var(--terracotta); font-size:.72rem; font-weight:700; letter-spacing:.14em; text-transform:uppercase; margin:0 0 1rem; }
+    .ps-row{ display:flex; align-items:center; gap:.6rem; width:max-content; margin:0 auto; }
+    .ps-row + .ps-label{ margin-top:1.8rem; }
+    .ps-row figure{ margin:0; text-align:center; }
+    .ps-row img{ width:128px; }
+    .ps-row .p img{ width:118px; border-radius:14px; box-shadow:0 6px 18px rgba(14,31,38,.18); }
+    .ps-row .p figcaption{ max-width:118px; }
+    .ps-row figcaption{ color:#6b7378; font-size:.78rem; max-width:128px; margin:.45rem auto 0; line-height:1.35; }
+    .ps-row .to{ color:var(--terracotta); font-size:1.3rem; padding-bottom:1.8rem; }
+    .ps-row .gap{ width:2.4rem; }
+    .ps-down{ color:var(--terracotta); text-align:center; font-size:1.3rem; margin:.4rem 0; }
+
+    .ps-time{ list-style:none; padding:0; margin:1.4rem 0; border-left:2px solid var(--terracotta); }
+    .ps-time li{ position:relative; padding:0 0 1rem 1.4rem; color:#3d474c; line-height:1.6; }
+    .ps-time li::before{ content:""; position:absolute; left:-7px; top:.45rem; width:12px; height:12px; border-radius:50%; background:var(--terracotta); }
+    .ps-time b{ font-family:'Inter',sans-serif; color:var(--ink); margin-right:.5rem; font-variant-numeric:tabular-nums; }
+
+    .ps-phase{ display:inline-block; width:10px; height:10px; border-radius:50%; margin-right:6px; vertical-align:0; }
+
+    .ps-detail{ display:grid; grid-template-columns:1fr 1fr; gap:1.4rem; align-items:stretch; }
+    .ps-type{ background:var(--white); color:var(--ink); border-radius:16px; padding:1.6rem; box-shadow:0 8px 26px rgba(14,31,38,.05); font-family:-apple-system,'SF Compact','Inter',sans-serif; }
+    .ps-type h3{ font-family:'Fraunces',serif; margin-bottom:.6rem; }
+    .ps-type div{ display:flex; justify-content:space-between; align-items:baseline; gap:1rem; padding:.45rem 0; border-bottom:1px solid var(--line-dark); }
+    .ps-type div:last-child{ border-bottom:0; }
+    .ps-type small{ color:#8a8a8a; font-size:.72rem; font-family:'Inter',sans-serif; white-space:nowrap; }
+    .ps-type .t32{ font-size:32px; font-weight:700; color:#DB0029; }
+    .ps-type .t24{ font-size:24px; font-weight:700; }
+    .ps-type .t18{ font-size:18px; }
+    .ps-type .t16{ font-size:16px; font-weight:500; }
+    .ps-type .t15{ font-size:15px; font-weight:300; color:#6b7378; }
+    .ps-detail .kans-card ul{ margin:.4rem 0 0; padding-left:1.1rem; color:#3d474c; }
+    .ps-detail .kans-card li{ margin:.45rem 0; line-height:1.55; font-size:.97rem; }
+
+    .ps-buttons{ display:flex; flex-wrap:wrap; gap:.8rem; margin-top:1.4rem; }
+
+    /* keep screen rows as horizontal strips on small screens */
+    .case-study .ps-row{ flex-direction:row !important; flex-wrap:nowrap !important; }
+    .case-study .ps-row figure{ flex:0 0 auto !important; width:auto !important; }
+    .case-study .ps-row .w img{ width:128px !important; max-width:none !important; height:auto !important; }
+    .case-study .ps-row .p img{ width:118px !important; max-width:none !important; height:auto !important; }
+
+    @media (max-width: 900px){
+      .ps-down{ display:none; }
+      .ps-hero-band{ grid-template-columns:1fr; }
+      .ps-hero-band img{ margin:0 auto; }
+      .ps-two, .ps-detail{ grid-template-columns:1fr; }
+    }
+  </style>
+</head>
+
+<body class="body">
+  <canvas id="bgCanvas"></canvas>
+
+  <header>
+    <nav class="mainnav">
+      <a href="index.html" class="brand">Suzan Alkanbar</a>
+      <ul class="menu">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="index.html#work" class="active">Mijn Werk</a></li>
+        <li><a href="aboutme.html">Over mij</a></li>
+        <li><a href="en/PolsSignaal.html" class="lang-switch" hreflang="en" aria-label="Switch to English"><span class="on">NL</span><span class="sep">/</span><span>EN</span></a></li>
+        <li><a href="#contact" class="pill">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="case-study">
+
+    <!-- HERO -->
+    <header class="ts-hero ps-hero">
+      <div class="ps-hero-banner"><img src="./IMG/polssignaal/polssignaal-banner.jpg" alt="Smartwatch op NS Stations"></div>
+      <div class="ps-hero-band">
+        <div class="ts-hero__inner">
+          <span class="eyebrow">NS · Smartwatch · Toegankelijkheid</span>
+          <h1>Een omroep die je kunt voelen</h1>
+          <p class="ts-hero__sub">Een smartwatch-app die omroepberichten op het station vertaalt naar trillingen en een duidelijke alert op de pols, voor reizigers die de omroep niet kunnen horen.</p>
+          <ul class="ts-hero__facts"><li><strong>Rol:</strong> UX/UI &amp; Interaction Designer</li><li><strong>Periode:</strong> 3 maanden</li><li><strong>Team:</strong> Individueel</li><li><strong>Platform:</strong> watchOS</li><li><strong>Tools:</strong> Figma, ProtoPie</li></ul>
+        </div>
+        <img src="./IMG/polssignaal/polssignaal-trio.png" alt="PolsSignaal watch screens">
+      </div>
+    </header>
+
+    <!-- INTRO -->
+    <section class="project-overview">
+      <h2 class="intro">Introductie</h2>
+      <p>Bij een spoorwijziging klinkt er een omroep. Wie doof of slechthorend is, mist dat bericht, en daarmee vaak de trein. Ik ontwierp een watch-app die de omroep vervangt door iets wat je <strong>voelt en ziet</strong>.</p>
+      <div class="overview">
+        <div class="overview-block"><h2>Probleem</h2><p>De omroep is alleen hoorbaar. Borden moet je zelf in de gaten houden, en NS-meldingen komen binnen op een telefoon in je zak.</p></div>
+        <div class="overview-block"><h2>Doelgroep</h2><p>Dove en slechthorende treinreizigers, op een druk perron en onder tijdsdruk.</p></div>
+        <div class="overview-block"><h2>Mijn rol</h2><p>Onderzoek, concept, interactieontwerp en het volledige watch-ontwerp in Figma en ProtoPie. De telefoonschermen zijn de bestaande NS-app, licht aangepast.</p></div>
+      </div>
+      <h2 class="ontwerpvraag">Ontwerpvraag</h2>
+      <p><i>Hoe kan de NS dove en slechthorende reizigers op tijd informeren over spoorwijzigingen en vertragingen op het station, zonder dat zij afhankelijk zijn van geluid?</i></p>
+    </section>
+
+    <!-- RESEARCH -->
+    <section class="ts-section">
+      <span class="eyebrow">Onderzoek</span>
+      <h2>Hoe krijg je de omroep mee als je hem niet hoort?</h2>
+      <div class="ps-two">
+        <div class="onderzoek-card"><span class="eyebrow">01 · Het NS-systeem</span><h3>Waar sluit de watch op aan?</h3><p>Ik bestudeerde de reisplanner, de meldingen in de NS-app, NS InfoPlus en het NS design system.</p></div>
+        <div class="onderzoek-card"><span class="eyebrow">02 · Signalen zonder geluid</span><h3>Voelen en zien</h3><p>Dove en slechthorende mensen krijgen meldingen via trillingen en visuele signalen. Een trilling voel je ook als het scherm uit staat.</p></div>
+      </div>
+      <div class="ts-callout">Waarom een smartwatch? Hij zit altijd op de pols en bereikt de reiziger zonder geluid en zonder dat die hoeft te zoeken.</div>
+    </section>
+
+    <!-- DESIGN DECISIONS -->
+    <section class="ts-section">
+      <span class="eyebrow">Ontwerpkeuzes</span>
+      <h2>Ontwerpen voor voelen en zien</h2>
+      <div class="kansgebieden-grid">
+        <div class="kans-card"><h3>Voelen vóór lezen</h3><p>Elke wijziging begint met een trilling, die sterker wordt zolang de reiziger niet reageert.</p></div>
+        <div class="kans-card"><h3><span class="ps-sw" style="background:#FFC917"></span>Geel is rust, <span class="ps-sw" style="background:#DB0029"></span>rood is actie</h3><p>De rand vertelt de status zonder tekst: geel als alles klopt, rood zolang een wijziging niet bevestigd is.</p></div>
+        <div class="kans-card"><h3>Eerst twee woorden</h3><p>Eerst alleen “⚠ Spoor wijziging”. Blijft de reiziger kijken, dan verschijnt het nieuwe spoor (watchOS: short look → long look).</p></div>
+        <div class="kans-card"><h3>Zwart met NS-kleuren</h3><p>Zwart voor maximaal contrast en batterij, met kleuren uit het NS design system.</p><div class="ps-colors"><span><i style="background:#000000"></i>Zwart #000000</span><span><i style="background:#FFC917"></i>NS-geel #FFC917</span><span><i style="background:#DB0029"></i>Rood #DB0029</span><span><i style="background:#0063D3"></i>Blauw #0063D3</span><span><i style="background:#009A42"></i>Groen #009A42</span></div></div>
+      </div>
+    </section>
+
+    <!-- PHONE + WATCH -->
+    <section class="ts-section">
+      <span class="eyebrow">Telefoon + watch</span>
+      <h2>De telefoon plant, de watch waarschuwt</h2>
+      <p>De watch pikt de reis automatisch op uit de NS-app, zodat de reiziger op het station niets extra hoeft te doen. Eén tap op “Akkoord” bevestigt welke reis gevolgd wordt.</p>
+      <div class="ps-canvas">
+        <p class="ps-label">Telefoon · NS-app</p>
+        <div class="ps-row"><figure class="p"><img src="./IMG/polssignaal/figma/k1-phone-1.png" alt="Reis plannen" loading="lazy"><figcaption>Reis plannen</figcaption></figure><span class="to">→</span><figure class="p"><img src="./IMG/polssignaal/figma/k1-phone-4.png" alt="Meldingen aanzetten" loading="lazy"><figcaption>Meldingen aanzetten</figcaption></figure><span class="to">→</span><figure class="p"><img src="./IMG/polssignaal/figma/k1-phone-5.png" alt="Opgeslagen" loading="lazy"><figcaption>Opgeslagen</figcaption></figure></div>
+        <p class="ps-label">Watch · PolsSignaal</p>
+        <div class="ps-row"><figure class="w"><img src="./IMG/polssignaal/figma/k1-watch-2.png" alt="Reis volgen?" loading="lazy"><figcaption>Reis volgen?</figcaption></figure><span class="to">→</span><figure class="w"><img src="./IMG/polssignaal/figma/k1-watch-3.png" alt="Laden" loading="lazy"><figcaption>Laden</figcaption></figure><span class="to">→</span><figure class="w"><img src="./IMG/polssignaal/figma/k1-watch-4.png" alt="Reis is actief" loading="lazy"><figcaption>Reis is actief</figcaption></figure><span class="to">→</span><figure class="w"><img src="./IMG/polssignaal/figma/k1-watch-5.png" alt="Live status" loading="lazy"><figcaption>Live status</figcaption></figure></div>
+      </div>
+    </section>
+
+    <!-- CORE FLOW -->
+    <section class="ts-section">
+      <span class="eyebrow">De kernflow</span>
+      <h2>Fatima op perron 4</h2>
+      <p>Fatima is doof. Ze wacht op de intercity van 07:56 en kijkt op haar telefoon, niet naar de borden.</p>
+      <ol class="ps-time"><li><b>07:52:00</b>Het spoor wijzigt naar 7. Ze voelt een trilling en ziet de rode rand.</li><li><b>07:52:02</b>Short look: “⚠ Spoor wijziging”.</li><li><b>07:52:04</b>Long look: “Spoor 7” met een bewegende pijl. Ze swipet.</li><li><b>07:52:05</b>Bevestigd. Fatima haalt haar trein.</li></ol>
+      <div class="ps-canvas">
+        <div class="ps-row"><figure class="w"><img src="./IMG/polssignaal/figma/k3-1.png" alt="Status: nog 6 min" loading="lazy"><figcaption>Status: nog 6 min</figcaption></figure><span class="to">→</span><figure class="w"><img src="./IMG/polssignaal/figma/k3-2.png" alt="Trilling + short look" loading="lazy"><figcaption>Trilling + short look</figcaption></figure><span class="to">→</span><figure class="w"><img src="./IMG/polssignaal/figma/k3-3.png" alt="Long look: Spoor 7" loading="lazy"><figcaption>Long look: Spoor 7</figcaption></figure></div>
+        <div class="ps-down">↓</div>
+        <div class="ps-row"><figure class="w"><img src="./IMG/polssignaal/figma/k3-4.png" alt="Bevestigd" loading="lazy"><figcaption>Bevestigd</figcaption></figure><span class="to">→</span><figure class="w"><img src="./IMG/polssignaal/figma/k3-5.png" alt="Spoor 4 → 7" loading="lazy"><figcaption>Spoor 4 → 7</figcaption></figure><span class="to">→</span><figure class="w"><img src="./IMG/polssignaal/figma/k3-6.png" alt="Krap: afteltijd rood" loading="lazy"><figcaption>Krap: afteltijd rood</figcaption></figure></div>
+      </div>
+
+      <h3>Wat als ze niet reageert?</h3>
+      <p>Er is geen omroep als vangnet. Daarom wordt de trilling elke 5 seconden sterker, tot de wijziging bevestigd is.</p>
+      <table class="result-table">
+        <thead><tr><th>Moment</th><th>Visueel</th><th>Haptiek (watchOS)</th></tr></thead>
+        <tbody><tr><td data-label="Moment"><span class="ps-phase" style="background:#DB0029;opacity:.5"></span>Fase 1 · wijziging</td><td data-label="Visueel">Rode rand flitst</td><td data-label="Haptiek (watchOS)">Medium, elke 0,75 s</td></tr><tr><td data-label="Moment"><span class="ps-phase" style="background:#DB0029;opacity:.75"></span>Fase 2 · geen reactie</td><td data-label="Visueel">Rode rand pulseert</td><td data-label="Haptiek (watchOS)">Heavy, elke 0,5 s</td></tr><tr><td data-label="Moment"><span class="ps-phase" style="background:#DB0029"></span>Fase 3 · nog steeds niets</td><td data-label="Visueel">Rode rand knippert snel</td><td data-label="Haptiek (watchOS)">Failure, elke 0,25 s</td></tr><tr><td data-label="Moment"><span class="ps-phase" style="background:#009A42"></span>Bevestigd</td><td data-label="Visueel">Groen vinkje</td><td data-label="Haptiek (watchOS)">Success</td></tr></tbody>
+      </table>
+
+      <div class="ts-callout">Waarom swipen en geen knop? Een swipe beslaat het hele scherm, dus minder mis-taps onder tijdsdruk. Het is het standaard watchOS-gebaar, en de bewegende pijl maakt het zichtbaar.</div>
+
+    </section>
+
+    <!-- STATES -->
+    <section class="ts-section">
+      <span class="eyebrow">States</span>
+      <h2>Elke situatie een eigen scherm</h2>
+      <p>Bij uitval of een gemiste overstap stuurt de watch je door naar de telefoon, waar ruimte is voor alternatieven. Een fout trilt bewust zachter, zodat je voelt dat het geen spoorwijziging is.</p>
+      <div class="ps-canvas">
+        <p class="ps-label">Wijzigingen</p>
+        <div class="ps-row"><figure class="w"><img src="./IMG/polssignaal/figma/k2-vervalt-long.png" alt="Trein vervalt" loading="lazy"><figcaption>Trein vervalt</figcaption></figure><span class="gap"></span><figure class="w"><img src="./IMG/polssignaal/figma/k2-overstap.png" alt="Overstap niet haalbaar" loading="lazy"><figcaption>Overstap niet haalbaar</figcaption></figure><span class="gap"></span><figure class="w"><img src="./IMG/polssignaal/figma/k2-handoff.png" alt="Verder op je telefoon" loading="lazy"><figcaption>Verder op je telefoon</figcaption></figure></div>
+        <p class="ps-label">Fouten</p>
+        <div class="ps-row"><figure class="w"><img src="./IMG/polssignaal/figma/err-netwerk.png" alt="Geen verbinding" loading="lazy"><figcaption>Geen verbinding</figcaption></figure><span class="gap"></span><figure class="w"><img src="./IMG/polssignaal/figma/err-onbekend.png" alt="Er ging iets mis" loading="lazy"><figcaption>Er ging iets mis</figcaption></figure></div>
+      </div>
+    </section>
+
+    <!-- WATCHOS DETAILS -->
+    <section class="ts-section">
+      <span class="eyebrow">Details</span>
+      <h2>Ontworpen volgens watchOS</h2>
+      <div class="ps-detail">
+        <div class="ps-type"><h3>Typografie · SF Compact</h3><div><span class="t32">Spoor 7</span><small>32 pt · Bold</small></div><div><span class="t24">Spoor wijziging</span><small>24 pt · Bold</small></div><div><span class="t18">Amersfoort → Arnhem</span><small>18 pt · Regular</small></div><div><span class="t16">Akkoord</span><small>16 pt · Medium</small></div><div><span class="t15">swipe om te bevestigen</span><small>15 pt · Light</small></div></div>
+        <div class="kans-card"><h3>Gemaakt voor 2 seconden kijken</h3><ul><li>Het spoornummer is het grootst: dat is het enige wat de reiziger écht nodig heeft.</li><li>Touch targets van minimaal 44 pt. De Akkoord-knop loopt over de hele breedte.</li><li>Maximaal twee acties per scherm.</li><li>Canvas van 198 × 242 pt (Apple Watch 45 mm).</li></ul></div>
+      </div>
+      <div class="ps-buttons">
+        <a href="https://cloud.protopie.io/p/d0dc5fe4a6ac103e08de3d23" class="btn btn-solid" target="_blank" rel="noopener">Probeer het ProtoPie-prototype →</a>
+        <a href="https://www.figma.com/design/JLcyJkmm0FiTeYnnLhfiVK/PolsSignaal-ns-app?node-id=0-1" class="btn" target="_blank" rel="noopener">Bekijk het Figma-bestand →</a>
+      </div>
+    </section>
+
+    <!-- NEXT PROJECT -->
+    <section class="next-project-section">
+      <a href="VGZ.html" class="next-project">Volgend project →</a>
+    </section>
+
+  </main>
+
+  <footer class="site-footer" id="contact">
+    <div class="wrap">
+
+      <div class="contact-compact">
+        <div class="contact-content">
+          <div class="contact-head">
+            <div class="contact-photo">
+              <img src="./IMG/contact-suzan.jpg" alt="Suzan met een vintage telefoon" loading="lazy">
+            </div>
+            <span class="eyebrow">Contact</span>
+          </div>
+          <h2>Laten we kennismaken.</h2>
+          <p>Heb je een vraag, een vacature of wil je iets bespreken? Stuur me een bericht via het formulier, een e-mail of een bericht op LinkedIn.</p>
+          <div class="footer-links">
+            <a href="mailto:suzanalkanbar@gmail.com">suzanalkanbar@gmail.com</a>
+            <a href="https://www.linkedin.com/in/suzan-alkanbar/" target="_blank" rel="noopener">LinkedIn ↗</a>
+            <a href="./pdf/SuzanAlkanbar_CV.pdf?v=2" target="_blank">Download CV</a>
+          </div>
+        </div>
+
+        <form class="contact-form" action="https://api.web3forms.com/submit" method="POST"
+          data-ok="Bedankt! Je bericht is verstuurd. Ik mail je zo snel mogelijk terug." data-err="Er ging iets mis bij het versturen. Probeer het opnieuw of mail me direct." data-sending="Versturen…"
+          data-email-empty="Vul je e-mailadres in, zodat ik je kan terugmailen." data-email-bad="Dit e-mailadres klopt niet. Controleer het nog even." data-msg-empty="Schrijf een bericht van minimaal 10 tekens.">
+          <h3>Stuur een bericht</h3>
+          <div class="form-row">
+            <div class="field">
+              <label for="cf-name-nl">Naam <span class="opt">(optioneel)</span></label>
+              <input id="cf-name-nl" type="text" name="name" autocomplete="name">
+            </div>
+            <div class="field">
+              <label for="cf-email-nl">E-mailadres <span class="req" aria-label="verplicht">*</span></label>
+              <input id="cf-email-nl" type="email" name="email" autocomplete="email" placeholder="naam@voorbeeld.nl" required aria-describedby="cf-email-nl-err">
+              <p class="field-error" id="cf-email-nl-err"></p>
+            </div>
+          </div>
+          <div class="field">
+            <label for="cf-msg-nl">Bericht <span class="req" aria-label="verplicht">*</span></label>
+            <textarea id="cf-msg-nl" name="message" rows="4" minlength="10" placeholder="Waar wil je het over hebben?" required aria-describedby="cf-msg-nl-err"></textarea>
+            <p class="field-error" id="cf-msg-nl-err"></p>
+          </div>
+          <input type="hidden" name="access_key" value="c11bfd0e-7e9c-449b-991f-32e89269a931">
+          <input type="hidden" name="from_name" value="Portfolio Suzan Alkanbar">
+          <input type="hidden" name="subject" value="Nieuw bericht via je portfolio">
+          <input type="checkbox" name="botcheck" class="form-trap" tabindex="-1" autocomplete="off" aria-hidden="true">
+          <div class="form-actions">
+            <button type="submit" class="btn btn-solid">Verstuur →</button>
+            <p class="form-status" role="status" aria-live="polite"></p>
+          </div>
+        </form>
+      </div>
+
+      <div class="footer-bottom">
+        <span>© 2026 Suzan Alkanbar</span>
+        <span>Ontworpen, gebouwd en gehost door Suzan Alkanbar</span>
+      </div>
+
+    </div>
+  </footer>
+
+  <script src="./JS/script.js?v=5"></script>
+
+</body>
+
+</html>
