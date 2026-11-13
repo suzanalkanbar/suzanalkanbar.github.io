@@ -5,22 +5,26 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Antea Group — Interactief voorbereidingsboekje | Suzan Alkanbar</title>
-  <link rel="stylesheet" href="./CSS/style.css?v=9">
+  <script>document.documentElement.classList.add("js")</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter+Tight:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Sofia+Sans+Extra+Condensed:wght@800;900&display=swap">
+  <link rel="stylesheet" href="./CSS/style.css?v=21">
   <link rel="alternate" hreflang="nl" href="https://suzanalkanbar.github.io/antea-group.html">
   <link rel="alternate" hreflang="en" href="https://suzanalkanbar.github.io/en/antea-group.html">
   <link rel="icon" href="./favicon.svg?v=1" type="image/svg+xml">
   <link rel="icon" href="./favicon.png?v=1" type="image/png" sizes="48x48">
   <link rel="apple-touch-icon" href="./favicon.png?v=1">
-  <meta name="theme-color" content="#B97C5E">
+  <meta name="theme-color" content="#ECE8E1">
 </head>
 
 <body class="body">
-  <canvas id="bgCanvas"></canvas>
 
-    <header>
+    <header class="site-header">
     <nav class="mainnav">
       <a href="index.html" class="brand">Suzan Alkanbar</a>
-      <ul class="menu">
+      <button class="nav-toggle" type="button" aria-label="Menu" aria-expanded="false" aria-controls="menu"><span></span><span></span></button>
+      <ul class="menu" id="menu">
         <li><a href="index.html">Home</a></li>
         <li><a href="index.html#work" class="active">Mijn Werk</a></li>
         <li><a href="aboutme.html">Over mij</a></li>
@@ -34,7 +38,7 @@
   <main class="case-study">
 
   <!-- HERO -->
-  <header class="ts-hero" style="background-image: url('./IMG/cover_designspurt.png');">
+  <header class="ts-hero">
 
     <div class="ts-hero__inner">
 
@@ -54,7 +58,8 @@
 
     </div>
 
-  </header>
+    <div class="ts-hero__media"><img src="./IMG/cover_designspurt.png" alt=""></div>
+    </header>
 
 
 
@@ -873,7 +878,7 @@
   <!-- NEXT PROJECT -->
   <section class="next-project-section">
 
-    <a href="VGZ.html" class="next-project">
+    <a href="PolsSignaal.html" class="next-project">
       Volgend project →
     </a>
 
@@ -891,7 +896,7 @@
         <div class="contact-content">
           <div class="contact-head">
             <div class="contact-photo">
-              <img src="./IMG/contact-suzan.jpg" alt="Suzan met een vintage telefoon" loading="lazy">
+              <img src="./IMG/contact-suzan-1000.webp" alt="Suzan met een vintage telefoon" loading="lazy">
             </div>
             <span class="eyebrow">Contact</span>
           </div>
@@ -944,7 +949,7 @@
   </footer>
 
 
-  <script src="./JS/script.js?v=5"></script>
+  <script src="./JS/script.js?v=21"></script>
 
 </body>
 

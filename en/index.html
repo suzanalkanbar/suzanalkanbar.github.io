@@ -6,22 +6,26 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Suzan Alkanbar — UX/UI &amp; Product Designer</title>
   <meta name="description" content="Suzan Alkanbar — UX/UI designer. Case studies in research, interaction design and prototyping.">
-  <link rel="stylesheet" href="../CSS/style.css?v=9">
+  <script>document.documentElement.classList.add("js")</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter+Tight:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Sofia+Sans+Extra+Condensed:wght@800;900&display=swap">
+  <link rel="stylesheet" href="../CSS/style.css?v=23">
   <link rel="alternate" hreflang="nl" href="https://suzanalkanbar.github.io/index.html">
   <link rel="alternate" hreflang="en" href="https://suzanalkanbar.github.io/en/index.html">
   <link rel="icon" href="../favicon.svg?v=1" type="image/svg+xml">
   <link rel="icon" href="../favicon.png?v=1" type="image/png" sizes="48x48">
   <link rel="apple-touch-icon" href="../favicon.png?v=1">
-  <meta name="theme-color" content="#B97C5E">
+  <meta name="theme-color" content="#ECE8E1">
 </head>
 
 <body>
-  <canvas id="bgCanvas"></canvas>
 
-  <header>
+  <header class="site-header">
     <nav class="mainnav">
       <a href="index.html" class="brand">Suzan Alkanbar</a>
-      <ul class="menu">
+      <button class="nav-toggle" type="button" aria-label="Menu" aria-expanded="false" aria-controls="menu"><span></span><span></span></button>
+      <ul class="menu" id="menu">
         <li><a href="index.html" class="active">Home</a></li>
         <li><a href="index.html#work">My Work</a></li>
         <li><a href="aboutme.html">About me</a></li>
@@ -55,9 +59,13 @@
 
       </div>
 
-      <div class="hero-organic-photo">
-        <img src="../IMG/me.jpeg" alt="Portrait of Suzan Alkanbar">
-      </div>
+      <div class="hero-name" aria-hidden="true"><span class="hero-name__txt">Suzan Alkanbar</span></div>
+
+  <div class="hero-portrait">
+    <img class="seen seen--tail" src="../IMG/hero/seen-tail.webp" alt="" width="1560" height="458">
+    <img class="hero-portrait__img" src="../IMG/me-cutout.webp" alt="Portrait of Suzan Alkanbar" width="768" height="1024">
+    <img class="seen seen--letter" src="../IMG/hero/seen-letter.webp" alt="" width="1067" height="387">
+  </div>
 
     </section>
 
@@ -96,13 +104,13 @@
       <div class="wrap">
         <div class="section-head">
           <span class="eyebrow">Selected work</span>
-          <h2>Three projects. Three contexts. Three different approaches.</h2>
-          <p>From corporate UX to healthcare and education. Each project asked for a different way of researching, designing and testing.</p>
+          <h2>Four projects. Four contexts. Four different approaches.</h2>
+          <p>From corporate UX to healthcare, mobility and education. Each project asked for a different way of researching, designing and testing.</p>
         </div>
 
         <div class="work-grid">
           <a class="work-card" href="antea-group.html">
-            <div class="work-media"><img src="../IMG/designSpurt.png" alt="Design Spurt — Antea Group"></div>
+            <div class="work-media cover cover--antea" role="img" aria-label="Design Spurt — Antea Group"><span class="cover__word" aria-hidden="true">Design<br>Spurt</span><span class="cover__stage"><img src="../IMG/antea/booklet-2.jpg" alt="" loading="lazy"><img src="../IMG/antea/booklet-1.jpg" alt="" loading="lazy"><img src="../IMG/antea/booklet-3.jpg" alt="" loading="lazy"></span></div>
             <div class="work-body">
               <h3 class="work-title">
                 Antea Group<br>
@@ -114,8 +122,21 @@
             </div>
           </a>
 
+          <a class="work-card" href="PolsSignaal.html">
+            <div class="work-media cover cover--pols" role="img" aria-label="PolsSignaal NS smartwatch screens"><span class="cover__word" aria-hidden="true">Pols<br>Signaal</span><span class="cover__stage"><img src="../IMG/polssignaal/figma/k3-2.png" alt="" loading="lazy"><img src="../IMG/polssignaal/figma/k3-3.png" alt="" loading="lazy"><img src="../IMG/polssignaal/figma/k3-5.png" alt="" loading="lazy"></span></div>
+            <div class="work-body">
+              <h3 class="work-title">
+                PolsSignaal NS<br>
+                <span>An announcement you can feel</span>
+              </h3>
+              <p class="work-desc">A smartwatch app that turns station announcements into a vibration and a clear alert, for deaf and hard-of-hearing travellers. Fully designed in Figma.</p>
+              <div class="work-tags"><span class="tag">Interaction Design</span><span class="tag">UI Design</span><span class="tag">Smartwatch</span><span class="tag">Accessibility</span></div>
+              <span class="work-arrow">View case study →</span>
+            </div>
+          </a>
+
           <a class="work-card" href="VGZ.html">
-            <div class="work-media"><img src="../IMG/vgzApp.png" alt="VGZ Soepel &amp; Sterk Coach"></div>
+            <div class="work-media cover cover--vgz" role="img" aria-label="VGZ Soepel &amp; Sterk Coach"><span class="cover__word" aria-hidden="true">Soepel<br>&amp; Sterk</span><span class="cover__stage"><img src="../IMG/covers/vgz-phones.webp" alt="" loading="lazy"></span></div>
             <div class="work-body">
               <h3 class="work-title">VGZ — Soepel &amp; Sterk Coach</h3>
               <p class="work-desc">An exercise app for people aged 65+, redesigned based on interviews, information architecture and the IBM Loop method.</p>
@@ -125,7 +146,7 @@
           </a>
 
           <a class="work-card" href="Bakkerijmuseum.html">
-            <div class="work-media"><img src="../IMG/Bakkerijmuseum.webp" alt="Bakery Museum Hattem"></div>
+            <div class="work-media cover cover--bak" role="img" aria-label="Bakery Museum Hattem"><span class="cover__word" aria-hidden="true">Bakkerij<br>Museum</span><span class="cover__stage"><img src="../IMG/covers/belly.webp" alt="" loading="lazy"></span></div>
             <div class="work-body">
               <h3 class="work-title">Bakery Museum Hattem</h3>
               <p class="work-desc">An interactive timeline with mascot Belly the Bun, designed to let children aged 9–10 play history instead of reading it.</p>
@@ -161,7 +182,7 @@
         <div class="contact-content">
           <div class="contact-head">
             <div class="contact-photo">
-              <img src="../IMG/contact-suzan.jpg" alt="Suzan with a vintage telephone" loading="lazy">
+              <img src="../IMG/contact-suzan-1000.webp" alt="Suzan with a vintage telephone" loading="lazy">
             </div>
             <span class="eyebrow">Contact</span>
           </div>
@@ -213,7 +234,7 @@
     </div>
   </footer>
 
-  <script src="../JS/script.js?v=5"></script>
+  <script src="../JS/script.js?v=23"></script>
 </body>
 
 </html>
