@@ -18,7 +18,7 @@
   --f-head:'Inter Tight','Helvetica Neue',Arial,sans-serif;
   --f-body:'Inter Tight','Helvetica Neue',Arial,sans-serif;
   --f-serif:'Instrument Serif',Georgia,serif;
-  --f-mono:'JetBrains Mono',ui-monospace,Menlo,Consolas,monospace;
+  --f-mono:'Inter Tight','Helvetica Neue',Arial,sans-serif; /* small labels and numbers: same family as the body text */
 
   --gutter:clamp(18px,4vw,56px);
   --ease:cubic-bezier(.2,.8,.2,1);
