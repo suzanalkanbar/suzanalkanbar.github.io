@@ -274,9 +274,10 @@ p{ margin:0 0 1.1em; text-wrap:pretty; }
 .logo--antea{ --src:url(../IMG/logos/antea-group.png); --ar:600/322; --h:clamp(42px,4.3vw,58px); }
 .logo--cb{ --src:url(../IMG/logos/centraal-beheer.svg); --ar:1920/399; --h:clamp(24px,2.5vw,32px); }
 .logo--olm{ --src:url(../IMG/logos/openluchtmuseum.png); --ar:600/170; --h:clamp(30px,3.1vw,42px); }
-/* text stand-in until the VGZ logo file is added */
-.logo--vgz{ height:auto; aspect-ratio:auto; background:none; -webkit-mask:none; mask:none; font:900 clamp(1.7rem,2.6vw,2.3rem)/1 var(--f-display); letter-spacing:.02em; color:color-mix(in srgb,var(--paper) 72%,transparent); transition:color .3s; }
-.logos li:hover .logo--vgz{ background:none; color:var(--paper); }
+/* text stand-in until a logo file is added (VGZ, Nederlands Bakkerijmuseum) */
+.logo--text{ height:auto; aspect-ratio:auto; background:none; -webkit-mask:none; mask:none; font:900 clamp(1.7rem,2.6vw,2.3rem)/1 var(--f-display); letter-spacing:.02em; color:color-mix(in srgb,var(--paper) 72%,transparent); transition:color .3s; }
+.logos li:hover .logo--text{ background:none; color:var(--paper); }
+.logo--text-long{ font-size:clamp(1.15rem,1.55vw,1.4rem); line-height:.95; letter-spacing:.03em; text-transform:uppercase; }
 #work .eyebrow::before{ background:var(--signal); }
 
 .work-grid{ display:grid; gap:clamp(18px,2.4vw,32px); counter-reset:work; }
