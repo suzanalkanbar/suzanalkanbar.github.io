@@ -165,6 +165,53 @@
     });
   }
 
+  /* ---------- Hero: scroll story (desktop) ----------------------------------- */
+  // The hero stays pinned for one extra screen of scrolling. In that time the
+  // portrait slides left, the name lifts away and the intro text grows.
+  const pin = $(".hero-pin");
+  const side = $(".hero-side");
+  if (pin && hero && portrait && side && !reduced) {
+    const wideMq = matchMedia("(min-width: 901px) and (min-height: 560px)");
+    let measured = false;
+    const measure = () => {
+      hero.style.setProperty("--e", 0);
+      const W = hero.clientWidth, H = hero.clientHeight;
+      const gutter = parseFloat(getComputedStyle(hero).paddingLeft) || 0;
+      const pw = portrait.offsetWidth;
+      hero.style.setProperty("--dx", (gutter - portrait.offsetLeft) + "px");
+      const sw = side.offsetWidth, sh = side.offsetHeight;
+      const left = gutter + pw * 1.3;                          // portrait + the tail of the drawn letter
+      const room = W - gutter - left;                          // free space right of the moved portrait
+      const s = clamp(Math.min(1.7, (room * 0.85) / sw, (H * 0.8) / sh), 1, 1.7);
+      const cx = left + room / 2;                              // centre of that space
+      const right = side.offsetLeft + sw;
+      const sx = Math.min(cx + (sw * s) / 2 - right, W - gutter - right);
+      hero.style.setProperty("--s", s.toFixed(3));
+      hero.style.setProperty("--sx", sx.toFixed(1) + "px");
+      hero.style.setProperty("--sy", (H * 0.52 - (side.offsetTop + sh / 2)).toFixed(1) + "px");
+      measured = true;
+    };
+    const update = () => {
+      if (!html.classList.contains("hero-scrolly")) return;
+      const total = pin.offsetHeight - innerHeight;
+      const p = clamp(-pin.getBoundingClientRect().top / (total || 1));
+      const e = p < 0.5 ? 2 * p * p : 1 - Math.pow(-2 * p + 2, 2) / 2;   // ease in-out
+      hero.style.setProperty("--e", e.toFixed(4));
+      hero.classList.toggle("hero-end", e > 0.85);
+    };
+    const setMode = () => {
+      const on = wideMq.matches;
+      html.classList.toggle("hero-scrolly", on);
+      if (on) { measure(); update(); }
+      else { hero.style.removeProperty("--e"); hero.classList.remove("hero-end"); }
+    };
+    setMode();
+    wideMq.addEventListener ? wideMq.addEventListener("change", setMode) : wideMq.addListener(setMode);
+    addEventListener("resize", () => { if (html.classList.contains("hero-scrolly")) { measure(); update(); } });
+    fontsReady.then(() => { if (html.classList.contains("hero-scrolly")) { measure(); update(); } });
+    addEventListener("scroll", () => requestAnimationFrame(update), { passive: true });
+  }
+
   /* ---------- Project covers: layers shift with the mouse --------------------- */
   if (finePointer && !reduced) {
     $$(".work-card").forEach(card => {
