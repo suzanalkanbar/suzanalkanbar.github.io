@@ -781,3 +781,7 @@ h2.ontwerpvraag + p{ font-family:var(--f-serif); font-size:clamp(1.7rem,3.3vw,3r
   .contact-photo{ height:auto; min-height:0; aspect-ratio:4/5; max-width:420px; margin-bottom:28px; }
   .footer-links{ margin-bottom:36px; }
 }
+
+/* placeholder text on pages that are still being written */
+.todo{ background:color-mix(in srgb,var(--signal) 55%,transparent); color:var(--ink) !important; padding:.05em .3em; border-radius:4px; font-style:normal; box-decoration-break:clone; -webkit-box-decoration-break:clone; }
+.todo-media{ display:grid; place-items:center; border:2px dashed var(--line); background:var(--surface); }
