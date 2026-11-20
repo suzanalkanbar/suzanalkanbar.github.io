@@ -429,6 +429,7 @@ h2.intro::before,h2.ontwerpvraag::before{ content:""; width:7px; height:7px; bac
 .project-overview > h2.intro + p{ font-size:clamp(1.3rem,2.1vw,1.9rem); line-height:1.25; letter-spacing:-.025em; color:var(--ink); }
 h2.ontwerpvraag{ margin-top:clamp(48px,6vw,90px); }
 h2.ontwerpvraag + p{ font-family:var(--f-serif); font-size:clamp(1.7rem,3.3vw,3rem); line-height:1.12; letter-spacing:-.015em; color:var(--ink) !important; margin:0; }
+h2.ontwerpvraag + p + p{ margin-top:1.4rem; }
 
 .overview{ display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:0; margin:clamp(40px,5vw,72px) 0 0; border-top:1px solid var(--ink); }
 .overview-block{ padding:26px clamp(16px,2.4vw,34px) 10px 0; }
@@ -440,6 +441,8 @@ h2.ontwerpvraag + p{ font-family:var(--f-serif); font-size:clamp(1.7rem,3.3vw,3r
 .overview-points strong{ display:block; }
 
 .booklet-gallery{ margin:clamp(28px,4vw,56px) 0; display:grid; gap:18px; }
+.booklet-gallery--row{ grid-template-columns:repeat(3,minmax(0,1fr)); }
+@media (max-width:640px){ .booklet-gallery--row{ grid-template-columns:1fr; } }
 .booklet-gallery img,.case-study figure img{ width:100%; border-radius:var(--r-md); background:var(--surface); }
 .case-study figure{ margin:0; }
 .case-study figcaption{ font:400 .72rem/1.5 var(--f-mono); letter-spacing:.03em; color:var(--muted); margin-top:.9em; }
