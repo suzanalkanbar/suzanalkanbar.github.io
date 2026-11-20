@@ -529,6 +529,7 @@ h2.ontwerpvraag + p{ font-family:var(--f-serif); font-size:clamp(1.7rem,3.3vw,3r
   .story-block,.result-block,.ibm-loop-layout,.vgz-kans-grid{ grid-template-columns:1fr; }
   .story-block.reverse > :first-child,.result-block.reverse > :first-child{ order:0; }
   .process-steps{ grid-template-columns:repeat(2,minmax(0,1fr)); }
+  .process-steps .step:last-child:nth-child(odd){ grid-column:1/-1; }
 }
 @media (max-width:640px){ .onderzoek-cards,.kansgebieden-grid{ grid-template-columns:1fr; } }
 
