@@ -568,7 +568,9 @@ h2.ontwerpvraag + p + p{ margin-top:1.4rem; }
 .q summary::before{ content:counter(q,decimal-leading-zero); font:500 .74rem/1 var(--f-mono); letter-spacing:.08em; color:var(--muted); }
 .q summary:hover{ color:var(--accent); padding-left:10px; }
 .q[open] summary{ color:var(--accent); }
-.q .plus{ width:44px; height:44px; border-radius:50%; border:1px solid var(--line); display:grid; place-items:center; font:300 1.5rem/1 var(--f-head); color:var(--ink); transition:rotate .5s var(--ease-out), background .3s, color .3s, border-color .3s; }
+.q .plus{ position:relative; flex:none; width:44px; height:44px; box-sizing:border-box; border-radius:50%; border:1px solid var(--line); font-size:0; line-height:0; color:var(--ink); transition:rotate .5s var(--ease-out), background .3s, color .3s, border-color .3s; }
+.q .plus::before, .q .plus::after{ content:""; position:absolute; top:50%; left:50%; width:16px; height:2px; border-radius:1px; background:currentColor; transform:translate(-50%,-50%); }
+.q .plus::after{ width:2px; height:16px; }
 .q[open] .plus{ rotate:135deg; background:var(--accent); border-color:var(--accent); color:var(--paper); }
 .q::details-content{ block-size:0; overflow:hidden; transition:block-size .55s var(--ease-out), content-visibility .55s allow-discrete; }
 .q[open]::details-content{ block-size:auto; }
