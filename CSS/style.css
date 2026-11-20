@@ -514,7 +514,7 @@ h2.ontwerpvraag + p{ font-family:var(--f-serif); font-size:clamp(1.7rem,3.3vw,3r
 .lofi-card{ margin:clamp(28px,4vw,52px) 0; }
 .research-figure{ margin:1rem 0 1.6rem !important; }
 
-.next-project-section{ display:block !important; width:100% !important; padding:0 !important; border:0 !important; }
+.next-project-section{ display:block !important; width:100% !important; padding:0 !important; border:0 !important; margin-bottom:clamp(40px,6vw,90px) !important; }
 .next-project{
   display:flex; align-items:center; justify-content:center; text-align:center; text-decoration:none;
   padding:clamp(60px,10vw,150px) var(--gutter); border-top:1px solid var(--line);
